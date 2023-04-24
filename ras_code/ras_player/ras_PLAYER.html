@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html id="id_html" style="background-color: rgb(241, 242, 156); color: rgb(1, 0, 3);">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="description" content="RaS A tool to practice language comprehension">
+      <meta name="license"     content="license MIT: you can share and modify the software, but you must include the license file">
+      <meta name="keywords"    content="HTML,CSS,JavaScript, bilingue, video, audio, subtitle,clip">
+      <meta name="author"      content="Antonio Cigna">
+      <meta name="date"        content="2023">
+      <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+      <title>here his the title</title>
+      <link rel="stylesheet" href="../ras_common/ras_0_style.css">
+      <style>  
+	  
+         .td_c1{border:0px solid green; text-align:center;} 
+         .td_c2 {border:0px solid green; left-padding:0; left-margin:0;text-align:left;vertical-align:middle;font-size:0.8em;} 
+         .timerow1 {
+         width:1em;
+         font-size:0.6em;
+         color:black;
+         padding:0 0.5em; 
+         vertical-align:middle;
+         text-align:right;
+         }
+         .timerow2 {
+         width:4em;
+         font-size:0.6em;
+         color:black;
+         padding:0 0.2em; 	
+         vertical-align:middle;
+         text-align:center;
+         }
+         .arrow12{
+         width:1em;text-align:right; color:black; font-size:0.5em;
+         }
+         .playBut1{
+         width:1em;padding:0;text-align:center;
+         }
+         .max_slider {
+         padding:0 2px;text-align:right; color:black; font-size:0.5em;vertical-align:middle;	
+         }	
+         .input_delta_slider  {
+         width:4em;display:inline;text-align:right;
+         }
+         .beg_end_slider {
+         border:0px solid black;
+         font-size:0.5em; text-align:center;  vertical-align:bottom; color:black; margin:0;padding:0;
+         }	
+         .big{
+         font-size:1.2em;
+         }
+         .speed_numR1 {
+         width:24%; text-align:right;font-weight:bold;font-size:1em;justify-content:right;align-item:right;
+         vertical-align:top;
+         }
+         .speed_numR2 {
+         width:1em; transform: rotate(-270deg);text-align:center; 
+         }
+         .speed_num {
+         width:25%; text-align:center;font-weight:bold;font-size:1em; 
+         }
+         .td_c1{border:0px solid green; text-align:center;} 
+         .td_c2 {border:0px solid green; left-padding:0; left-margin:0;text-align:left;vertical-align:middle;font-size:0.8em;} 
+         .msg {  /* used only to be selected by classname*/ }
+         .header_1 {vertical-align: bottom; color:black; font-weight:bold;}
+         .fsize1 {font-size:1em;}     
+         .toricFrame {
+         border: 1px solid black;
+         color: black;
+         background-color:lightgrey;
+         text-align: center;
+         vertical-align: middle;   
+         margin: auto;
+         border-radius: 1.4em;
+         }
+         .h_buttonWhite {
+         background-color: white;
+         border: 2px solid black;
+         font-weight: bold; 
+         font-size:1.0em;
+         color: black;
+         text-align:center;
+         vertical-align:middle;
+         padding-left:0.3em;
+         padding-right:0.3em;   
+         border-radius: 1.4em;
+         box-shadow: 0.5em 0.5em 0.5em rgba(0,0,0,0.6);  
+         width:100%;
+         height:3.0em;
+         }
+         .h_buttonWhite:hover {
+         background-color: orange;
+         }
+         .h_backcolor{
+         /*
+         padding: 0;
+         background-color:lightgrey;
+         */
+         }
+         .h_backcolor2{
+         /*
+         padding:0; margin:0;border:0; 
+         background-color:grey;
+         */
+         }
+         .c_voice {
+         text-align:center;
+         padding:0 0.2em;
+         min-width:1.5em;
+         }
+         .c_voice_m1 {
+         text-align:center;
+         padding:0 0.2em;
+         min-width:1.5em;
+         border:2px solid black;
+         }
+         .c_m1 {
+         border-bottom:1px solid black;
+		 border-top:1px solid black;
+         }
+		.c_m2 {
+            background-color: gray;
+         } 
+		 .c_playReal {
+         border-left:1px solid black;
+		 border-right:1px solid black;
+		 background-color: darkseagreen;
+         }
+		 .c_playSynth {		 
+         border-left:1px solid black;
+		 border-right:1px solid black;
+		 background-color: DarkCyan;
+		 }
+      </style>
+   </head>
+   <body id="id_body" style="width: 100%; background-color: rgb(243, 200, 157); color: rgb(0, 0, 0);">
+      <div id="host_level1_0">
+         <!-- html_Include_1 -->   
+         <div id="id_div20" class="divPage back_color_body w100 h100 " style="display: block; margin: auto; text-align: center; width: 100%; background-color: rgb(243, 200, 157); color: rgb(0, 0, 0);">
+            <!-- html_Include_1_1 -->	
+            <!-- fixed transform rotate -->
+			<!--
+            <div id="id_spee" style="font-size:1em;margin:auto;text-align:center; 
+               position: fixed;  top:48%; z-index: 1;	 height: 25%; left:94%; right:1%; 		 
+               transform: rotate(270deg); 
+               font-weight:bold;
+               display:flex; 	">
+              
+            </div>
+			-->
+            <!-- end fixed transform rotate -->
+            <div id="id_div20s" class="w100 Xh95   marg_vert marg_vert" style="border:0px solid green;margin:auto; text-align:center;">
+               <span id="id_language" style="display:none;">en</span>   
+               <span id="id_voice_language"   style="display:none;">en,6</span>   
+               <span id="id_hardsub" style="display:none;">false</span>   
+               <span id="id_file_suborig" style="display:none;">true</span>   
+               <span id="id_file_subtran" style="display:none;">true</span>   
+               <span id="id_reset_storage" style="display:none;">false</span>  
+               <span class="msg" id="mh00" style="display:none;">../DOC/DOC_English/doc_en.html</span>
+               <div id="id_head0" style="border:0px solid red;">
+                  <b><span style="font-size:2em;" id="id_titolo"></span></b> 
+                  <br>
+                  <div style="font-size:1em;line-height:0.8em;">									
+                     <i>RaS - Real and Synthetic Voice</i>
+                     <br>
+                     <span style="font-size:0.6em;"><i>Antonio Cigna 2023</i></span>
+                  </div>
+               </div>
+               <div id="idtb101" class="w100 pad0  marg_vert " style="display:flex; justify-content: space-between; align-items: baseline;  
+                  font-size:1em;border:0px solid red; ">
+                  <div id="tdV_right1" style="width:25%;text-align:center; vertical-align:top; border: 0px solid blue;" class="td1 center ">
+                     <div id="id_top_right" style="width:98%;border:0px solid green; ">
+                        <table style="width:100%;border:0px solid red;">
+                           <colgroup>
+                              <col span="1" class="h_backcolor" style="min-width:34%;border:0;padding:0 0.1em;">
+                              <col span="1"  style="width:66%;">
+                           </colgroup>
+                           <tr>
+                              <td id="id_div_words" >                          
+                                 <button id="id_call_words" class="h_buttonWhite"> 
+                                 <a id="id_href_parole" style="color:blue; text-decoration: none;" 
+                                    target="_blank"  onclick="fun_pauseVid()">
+                                 <span class="msg" id="m300" style="min-width:100%;">Words</span><br>
+                                 </a>  
+                                 </button>                           							
+                              </td>
+                              <td>&nbsp;</td>
+                           </tr>
+                           <tr>
+                              <td id="id_div_biling" >
+                                 <button id="id_call_biling" class="h_buttonWhite">										
+                                 <a id="id_href_biling" href="" style="color:blue; text-decoration: none;" 
+                                    target="_blank"  onclick="fun_pauseVid()" >
+                                 <span class="msg" id="m302" style="min-width:100%;">Testo bilingue</span>									  
+                                 </a>     
+                                 </button>
+                              </td>
+                              <td>&nbsp;</td>
+                           </tr>
+                           <tr>
+                              <td id="id_div_origText"> 
+                                 <button id="id_call_origTxt" class="h_buttonWhite"  >
+                                 <a id="id_href_origTxt" href="" style="color:black; text-decoration: none;" 
+                                    target="_blank"  onclick="fun_pauseVid()" >
+                                 <span class="msg" id="m303" style="min-width:100%;">Testo Originale</span>
+                                 </a>     
+                                 </button>                    	   
+                              </td>
+                              <td>&nbsp;</td>
+                           </tr>
+                        </table>
+                     </div>
+						
+                     <div id="id_sub_div" style="display:none; text-align:left;border:2px solid green;padding:1em;margin-bottom:1em;">
+                        <input type="radio" id="id_forceSubOpen" name="forceSub" checked="" onclick="onclick_OneClipRow_showHide_AllSub(true)">
+                        <label for="id_forceSubOpen">📖 <span class="msg" id="m115">show all subtitles</span></label>
+                        <br>
+                        <input type="radio" id="id_forceSubClose" name="forceSub" onclick="onclick_OneClipRow_showHide_AllSub(false)">								
+                        <label for="id_forceSubClose">📕 <span class="msg" id="m116">hide all subtitles</span></label>
+                     </div>
+					
+                     <div id="id_bottom_right" style="width:98%;border:0px solid green;">
+                        <table style="width:100%;border:0px solid red;">
+                           <colgroup>
+                              <col span="1" class="h_backcolor"   style="width:34%;">
+                              <col span="2" class="h_backcolor2"  style="width:33%;">
+                           </colgroup>
+                           <tr>
+                              <td id="id_subOnLeftVideo" >
+								<!--
+                                 <button class="h_buttonWhite" style="color::black; text-decoration: none;width:100%;" 
+                                    onclick='onclickOnOff("id_sub_div", "block")'>
+                                 <span class="msg" id="m111">Subtitles</span>
+                                 </button>
+								 -->
+                              </td>
+                              <td>
+                                 <button class="h_buttonWhite"  id="id_chg_color" style="color:black; text-decoration: none;width:100%;"
+                                    onclick="onclick_show_color()">
+                                 <span class="msg" id="m201" >Colors</span>
+                                 </button> 
+                              </td>
+                              <td >                  
+                                 <button class="h_buttonWhite" style="visibility:hidden;" onclick="onclick_show_statist()">
+                                 <span class="msg" id="m213">Statistics</span>
+                                 </button>	
+                              </td>
+                           </tr>
+                           <tr>
+                              <td id="id_subOnLeftSync">							
+                                 <button id="id_check_sync" class="h_buttonWhite" style="color:black; text-decoration: none;width:100%;"
+                                    onclick="onclick_show_syncstaff(  document.getElementById('id_central') )" >
+                                 <span class="msg" id="m110">Synchronization</span> 
+                                 </button>	
+                              </td>
+                              <td >
+                                 <button class="h_buttonWhite">
+                                 <a id="gotoHelp0"  style="color:black; text-decoration: none;width:100%;" 
+                                    href="../DOC/DOC_English/doc_en.html">
+                                 <span class="msg" id="m201X" style="min-width:100%;">HELP</span>
+                                 </a>   
+                                 </button>								
+                              </td>
+                              <td >
+                                 <button class="h_buttonWhite" style="visibility:hidden;" onclick="onclick_reset_storage()">
+                                 <span class="msg" id="m113">Reset</span>
+                                 </button>
+                              </td>
+                           </tr>
+                        </table>
+                     </div>
+                     <script>
+                        function button_symb_meaning() {
+                           let ele_legend = document.getElementById('id_legend');
+                           if (ele_legend.style.display=='block' ) {
+                        	   ele_legend.style.display='none' ;
+                           } else {
+                        	   ele_legend.style.display='block' ;
+                           }
+                        }
+                        
+                     </script>
+                    
+                     <div id="id_symb_meaning" style="width:98%;border:0px solid green;" > 
+                     </div>
+					 <script src="./ras_player_jsHTML/ras_player_03id_symb_meaning.jsHTML"></script>
+                  </div>
+                  <div id="id_td_video" style="width:50%; border:0px solid blue;">
+                     <div id="id_div_color" style="display:none;padding:0;margin:auto; ">
+                        <div id="id_list_id_bg" style="display:none;">id_html id_body id_div20 id_div20buffer id_mask_dragsub</div>
+                        <div id="id_list_id_fg" style="display:none;">id_html id_body id_div20 id_mask_dragsub</div>
+                        <div id="id_list_id_border" style="display:none;"> MIO1 MIO2 id_t5 MIO33 MIO5sync id_show_sub00 id_div00_colr00</div>
+                        <div style="margin:auto;text-align;border:1px solid green;width:80%; background-color: white; color:black;">
+                           <div>
+                              <b><span class="msg" id="m202">Change Colors</span></b>
+                           </div>
+                           <table style="border:0px solid black;margin:auto;">
+                              <tbody>
+                                 <tr>
+                                    <td></td>
+                                    <td class="td_c1">
+                                       <div>
+                                          <button onclick="onclick_reset_initial_colors()" style="box-shadow: 1.0em 1.0em 1em -.5em #000000;">
+                                          <b><span class="msg" id="m145">reset</span></b>
+                                          </button>  
+                                       </div>
+                                    </td>
+                                    <td class="td_c2"><span class="msg" id="m146">restores the initial text and background colors</span></td>
+                                 </tr>
+                                 <tr>
+                                    <td style="text-align:left;"><span class="msg" id="m204">Background</span></td>
+                                    <td class="td_c1"> 
+                                       <input type="color" id="id_colorBG" name="BG_Colors" value="#00EEFF" style="box-shadow: 1.0em 1.0em 1em -.5em #000000;" oninput="onclick_change_color( this.value, 'BG', true)">					
+                                    </td>
+                                    <td class="td_c2"><span class="msg" id="m147">choose the background color</span></td>
+                                 </tr>
+                                 <tr>
+                                    <td style="text-align:left;"><span class="msg" id="m205">Text</span></td>
+                                    <td class="td_c1">                      	
+                                       <input type="color" id="id_colorTx" name="FG_Colors" value="#0000ff" style="box-shadow: 1.0em 1.0em 1em -.5em #000000;" oninput="onclick_change_color( this.value, 'FG', true)">		
+                                    </td>
+                                    <td class="td_c2"><span class="msg" id="m148">choose text color</span></td>
+                                 </tr>
+                                 <tr>
+                                    <td style="text-align:left;"><span class="msg" id="m206">Text</span></td>
+                                    <td class="td_c1">
+                                      
+                                       <button onclick="onclick_search_the_best_contrast_textColor('id_colorTx',10,  3, 100000  )" style="box-shadow: 1.0em 1.0em 1em -.5em #000000;">
+                                       <b><span class="msg" id="m207">automatic</span></b>
+                                       </button>    					
+                                    </td>
+                                    <td class="td_c2"><span class="msg" id="m149">automatic search for the text color that best matches the background</span></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <div id="id_out_mio_msg" style="display:none; font-size:1.2em;">Passed - Ratio 13.56 vs minimum ratio 4.5<br>background:rgb(243,200,157)<br>foreground:rgb(0,0,0)</div>
+                           <div id="id_currentRatio" style="width:100%">
+                              <span class="msg" id="m208"><br>The <b>Contrast</b>between the background and text colors is</span>                    
+                              <span id="id_currentRatioData" style="display:none;">13.56</span>
+                              <div>
+                                 <span id="id_isValidRatio_Passed" style="display: block; color: green;">
+                                 <b><span class="msg" id="m209">good</span></b>
+                                 </span>
+                                 <div id="id_isValidRatio_Failed" style="display:none;">
+                                    <span id="id_isValidRatio_Failed1" style="color:red;">
+                                    <b><span class="msg" id="m210">insufficient</span></b>
+                                    </span>	
+                                    <br>
+                                    <span id="id_isValidRatio_Failed2" style="font-size:0.7em;">
+                                    <span class="msg" id="m211">change the color of the background or text<br>or press the <b>auto.</b>key <br>to automatically search for the most suitable text color</span>
+                                    </span>		
+                                 </div>
+                                 <div id="searchProgress" style="width: 100%; display: none;">
+                                    <span id="id_isValidRatio_Searching" style="display:none;color:red;">
+                                    <b><span class="msg" id="m212">I'm looking for the best color</span></b>
+                                    </span>		
+                                    <div id="myBar" style="width:0%;text-align:left;padding:0;margin:0;"></div>
+                                    <div id="myBar2" style="width:100%;padding:0;margin:0;">&nbsp;</div>
+                                 </div>
+                              </div>
+                              <div><span id="id_perc"> </span></div>
+                              <div id="id_div_contrasto"></div>
+                              <div id="id_div_contr_msg"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div id="id_statist" style="display:none; font-style: italic;margin:auto; text-align:center;background-color:lightgrey; color: black;padding:1em;">
+                        <table style="margin:auto; text-align:center;border:1px solid black;">
+                           <caption><b><span class="msg" id="m010">how much are you working with this file</span></b></caption>
+                           <tbody>
+                              <tr>
+                                 <th class="msg" id="m011">Session<br>&nbsp;</th>
+                                 <th class="msg" id="m012">num.<br>days</th>
+                                 <th class="msg" id="m013">num.<br>sessions</th>
+                                 <th class="msg" id="m014">num.<br>clips</th>
+                                 <th class="msg" id="m015">time<br>usage</th>
+                                 <th class="msg" id="m016">time<br>visual.</th>
+                                 <th class="msg" id="m019">num.<br>sub.lines</th>
+                                 <th class="msg" id="m020">num.<br>words</th>
+                              </tr>
+                              <tr>
+                                 <td><b><span class="msg" id="m017">this session</span></b></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td id="st_1nclip">0</td>
+                                 <td id="st_1elap">0:00:00</td>
+                                 <td id="st_1vidtm">0:00:00</td>
+                                 <td id="st_1lines">0</td>
+                                 <td id="st_1words">0</td>
+                              </tr>
+                              <tr>
+                                 <td><b><span class="msg" id="m018">all sessions</span></b></td>
+                                 <td id="st_2day">4</td>
+                                 <td id="st_2run">258</td>
+                                 <td id="st_2nclip">0</td>
+                                 <td id="st_2elap">0:00:00</td>
+                                 <td id="st_2vidtm">0:00:00</td>
+                                 <td id="st_2lines">0</td>
+                                 <td id="st_2words">0</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- end of statist --> 
+                     <div style="border:0px solid violet; ">
+                        <div id="id_ctrVideo" class="centerFlex" style="border:0px solid green; 
+                           padding:0.5em;margin:0;
+                           margin:auto;text-align:center; vertical-align: middle;padding:0; margin:0; ">
+                           <div id="id_timestaff">
+                              <div id="id_time_video" style="display:none;font-size:0.5em;font-weight:bold; ">
+                                 00:00:00 = 0.000 seconds&nbsp;&nbsp;&nbsp;&nbsp; subtitle line 1 (0.000  :  18.571)
+                              </div>
+                           </div>
+                           <video id="myVideo" style="height: 50%; width: 99%; margin: auto; 
+                              border: 0px solid blue; padding: 0px; display: block;" 
+                              onloadedmetadata="onloaded_fun()" >
+                           </video>
+                        </div>
+                        <!-- html_Include_1_1_4 -->	
+                        <div id="id_central" style="display:block;
+                           margin: auto; border: 0px solid blue; text-align: center; 
+                           width: 95%; opacity: 1;">
+                           <div id="subOrigEndTime2" style="display:none;border:0px solid blue;">0</div>
+                           <div id="id_toric" class="toricFrame" style="display:none; width:100%; border:1px solid black;">
+                              <div>
+                                 <button id="id_ctl_playpause"  style="border:0;background: rgba(125, 125, 0, 0)" 
+                                    onclick="onclick_controls_emul_play(this)">
+                                 <span style="display: block; font-size: 2em; height: 1.4em;">⏵</span>
+                                 <span style="display: none; font-size: 2em; height: 1.4em;">⏸</span>
+                                 </button>
+                              </div>
+                              <div style="width:100%; border:0px solid black;vertical-align:middle;text-align:left;">	
+                                 <span style="text-align:left; font-size:0.5em;" id="id_ctl_value">0,000</span><span>&nbsp;</span>	
+                                 <input id="id_ctl_slider" type="range" min="0.0" max="6816.287347" value="0" step="0.001" 
+                                    style="width:80%;" oninput="oninput_ctl_slider()" onchange="onchange_ctl_slider()">      
+                              </div>
+                           </div>
+                           <div id="id_main_subt" style="display:none;width:100%; height:9em;border:0px solid yellow;">
+                              <div  id="id_underVideoOrig" style="display:flex;justify-content:center;align-items: flex-start;align-content: center;
+                                 width:120%;height:4em;
+                                 overflow:auto;
+                                 resize:both;
+                                 border: 1px solid white;">
+                                 <div style="border: 0px solid red; height:100%;">
+                                    <button class="buttonTD2" id="idb_xx" style="min-width:3em;width:3em;" onclick="onclick_22OneClipRow_showHide_sub(this, document.getElementById('id_subOrigText2'))">
+                                    <span style="display: none; font-size: 2em; height: 1.4em;">📖</span>
+                                    <span style="display: block; font-size: 2em; height: 1.4em;">📕</span>
+                                    </button>
+                                 </div>
+                                 <div style="width:0.5em;">&nbsp;</div>
+                                 <div id="id_subOrigText2" class="orig_txt" 
+                                    style="border: 0px solid red; min-height:90%;max-height:90%;										
+                                    text-align: left; visibility: hidden;">
+                                 </div>
+                              </div>
+                              <script>
+                                 function onclick_show_warning(sw1) {
+                                 	if (document.getElementById("idbT_xx").children[0].style.display=="none") { 
+                                 		if (sw1) {											
+                                 			document.getElementById("m893_894").style.display ="block"; 
+                                 			document.getElementById("id_subTranText2").style.display ="none"; 
+                                 		} else {									
+                                 			document.getElementById("m893_894").style.display ="none"; 
+                                 			document.getElementById("id_subTranText2").style.display ="block"; 		
+                                 		}
+                                 	} else {
+                                 		document.getElementById("m893_894").style.display ="none"; 
+                                 		document.getElementById("id_subTranText2").style.display ="block"; 		
+                                 	}
+                                 }
+                                   
+                                   
+                              </script>
+                              <div id="id_underVideoTran" class="uVideoTranDiv"  
+                                 style="display:flex;justify-content:center;align-items: flex-start;align-content: center;
+                                 width:120%;height:4em;
+                                 overflow:auto;
+                                 resize:both;
+                                 border: 1px solid white;"
+                                 onmouseover="onclick_show_warning(true)" onmouseout="onclick_show_warning(false)"
+                                 >
+                                 <div style="border: 0px solid red; height:100%;">
+                                    <button class="buttonTD2" id="idbT_xx" style="min-width:3em;width:3em;padding-right: 0.5em;text-align:center;" 
+                                       onclick="onclick_22OneClipRow_showHide_sub(this, document.getElementById('id_subTranText2'))">
+                                    <span style="display:none;font-size:2em;height:1.4em; ">
+                                    <span style="position:relative;">&nbsp;<span style="position:absolute; top:0.1em;right:-0.2em;font-weight:bold;">T</span></span></span>
+                                    <span style="display:block;font-size:2em;height:1.4em;"><span style="position:relative;">&nbsp;?<span style="position:absolute;top:-0.0em;left:-0.2em;font-weight:bold;width:1em;">t</span></span>
+                                    </span>							
+                                    </button>
+                                 </div>
+                                 <div style="width:0.5em;">&nbsp;</div>
+                                 <div  id="m893_894" 
+                                    style="display:none;background-color:white; 
+                                    border: 0px solid red; min-height:90%;max-height:90%;width:100%; ">									
+                                    <span id="m893" style="color:red;">
+                                    The translated line should only serve to get an idea of the meaning.<br>
+                                    <b>Line-by-line translation is generally unreliable.</b>
+                                    </span>
+                                    <br>
+                                    <span id="m894"  style="color:black;">click to read them</span>
+                                 </div>
+                                 <div id="id_subTranText2" class="trad_txt" 
+                                    style="color:black; background-color: lightgrey; 
+                                    border: 0px solid red; min-height:90%;max-height:90%;width:100%;											
+                                    text-align: left; visibility: hidden;											 
+                                    ">
+                                 </div>
+                              </div>
+                           </div>
+                           <div id="id_subOrigSilentH" 
+                              style="display:none;width:100%; height:9em;border:0px solid yellow;">
+                              <br><br>
+                              <span id="id_subOrigSilent"></span>
+                              <button class="button" style="font-size:1em; width:8em;" onclick="onclick_skipThisPiece()">
+                              <span class="msg" id="m846">Skip</span></button>                                         
+                           </div>
+                        </div>
+                        <!--   TTS text to speech  --> 	
+                        <div id="id_tts" style="display:none; justify-content:center; border:4px solid red;
+                           text-align:center; margin-bottom:3em;">
+                           <table  style="border:0px solid black;text-align:center;padding:0.5em;" >
+                              <caption id="m901"><b>Synthetic Voice List</b></caption>
+                              <tr style="font-weight:bold;">
+                                 <td id="m902" style="text-align:center;">N.</td>
+                                 <td id="m903">Lang.id</td>
+                                 <td id="m904"style="text-align:left;">Voice Name</td>
+                              <tr>
+                              <tr id="tthV1" style="display:none;">
+                                 <td></td>
+                                 <td></td>
+                                 <td style="text-align:left;"></td>
+                              </tr>
+                              <tr id="tthV2" style="display:none;">
+                                 <td></td>
+                                 <td></td>
+                                 <td style="text-align:left;"></td>
+                              </tr>
+                              <tr id="tthV3" style="display:none;">
+                                 <td></td>
+                                 <td></td>
+                                 <td  style="text-align:left;"></td>
+                              </tr>
+                              <tr id="tthV4" style="display:none;">
+                                 <td></td>
+                                 <td></td>
+                                 <td  style="text-align:left;"></td>
+                              </tr>
+                              <tr id="tthV5" style="display:none;">
+                                 <td></td>
+                                 <td></td>
+                                 <td  style="text-align:left;"></td>
+                              </tr>
+                              <tr id="tthV6" style="display:none;">
+                                 <td></td>
+                                 <td></td>
+                                 <td  style="text-align:left;"></td>
+                              </tr>
+                           </table>
+                           <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->	  
+                        </div>
+                        <!--             xx   -->
+                        <div style="width:100%;">
+                           <div style="display:flex; width:100%;">
+                              <div style="padding-right:1em;vertical-align:top;  min-width:5%;">	
+                              </div>
+                              <div id="id_sub_filler" style="display:block; min-width:95%; 
+                                 vertical-align:top; 
+                                 text-align:center;font-size:1.0em;
+                                 border:0px solid green;"></div>
+                           </div>
+                        </div>
+                        <!--  ................................ -->
+                        <div id="id_NO_clip00" style="display: none; width: 100%; vertical-align: top; resize: both; border: 0px solid blue;">
+                           <div id="id_noclip_butt" class="cl_row" style="display:none; width:100%;padding:0.2em 0 0.5em 0;">
+                              <div id="id_td_suborig2" style="width: 100%; text-align: center; border: 0px solid red; display: none;">
+                                 <button class="button" style="font-size:0.7em;" onclick="onclick_display_subtitle( 0 )">
+                                 <span class="msg" id="m782">Show the <b>Subtitles</b>of the line being played</span>
+                                 </button>
+                              </div>
+                              <div id="id_td_subtra2" style="width: 100%; text-align: center; border: 0px solid red; display: none;">
+                                 <button class="button" style="font-size:0.7em;" onclick="onclick_display_subtitle( 1 )">
+                                 <span class="msg" id="m783">Show the <b>Translation</b>of the line being played</span>
+                                 </button>
+                              </div>
+                           </div>
+                           <!--  ............................ -->
+                           <!-- id_central -->
+                           <!--  .................. -->
+                           <div id="id_td_sync1" style="display:none;width:30em;  vertical-align:middle;
+                              text-align:center;border:2px solid red; padding:1em 0 1em 0;color:black;">
+                              <div  style="width: 100%;display: flex;  justify-content: center;">
+                                 <div>
+                                    <div id="m244"><b>To synchronize subtitles with speech</b></div>
+                                    <div id="m245" style="text-align:left;">
+                                       selects a group of subtitle lines (keys <b>→ &nbsp; ←</b>),
+                                       <br>make sure subtitles are visible (open book 📖)
+                                       <br>click on the talking head icon 🗣 to start playback.
+                                       <br>as soon as any line of subtitles has been completely spoken<br>
+                                       press the <b>Stop</b>key
+                                       <br>If it is difficult to stop the video at the exact point in time,
+                                       <br>you can decrease the speed (vertical side slider) and try again.
+                                       <br>The <b>Sync.OK</b>button closes this window.
+                                    </div>
+                                 </div>
+                              </div>
+                              <div  style="width: 100%;display: flex;  justify-content: space-around;">
+                                 <div style="width: 33%;">
+                                    <b>diff. sync</b><br> 
+                                    <input type="number" id="id_diff_sync" step="0.001" onchange="onclick_change_diff_sync()" class="div20Num">
+                                 </div>
+                              </div>
+                              <div style="width: 100%;display: flex;  justify-content: space-around;">
+                                 <div style="width: 33%;">
+                                    <button id="id_checksync2" class="buttonTD2" style="font-size:1em;width:60%;text-align:center;" 
+                                       onclick="onclick_playOrNot_to_sync2(this, false)">Stop
+                                    </button> 
+                                 </div>
+                                 <div style="width:  33%;">
+                                    <button id="id_checksync3" class="buttonTD2" style="font-size:1em;width:60%;text-align:center;" 
+                                       onclick="onclick_show_syncstaff(  document.getElementById('id_central') )">Sync.OK
+                                    </button> 										
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- end of div_noclip -->
+                        <div id="id_diff_time" style="display:none; width:100%; font-size:1em; margin:1em 0 0 0; background-color:yellow;"></div>
+                        <!--  end of let html_Include_1_1_4 -->   
+                        <div style="width:100%;">
+                           <button id="id_butt_pract" class="h_buttonWhite"  style="display:none;font-size:1.2em;width:100%;height:4em;  margin-bottom:10em;"
+                              onclick="show_practice(this)" >
+                           <span id="m895_897">	
+                           Practice <br>
+                           by listening and reading 
+                           <br>
+                           a subtitle line at time or a group of them 
+                           </span>
+                           </button>	
+                        </div>
+                     </div>
+                  </div>
+                  <!-- row1-end --> 
+                  <!-- end of html_Include_1_1_3 -->
+                  <div id="tdV_right2" style="width:25%;height-min:100%; text-align:center;  border: 0px solid blue;" class="td1  center ">
+                  </div>
+               </div>
+            </div>
+            <div id="id_ready" style="font-size:2em;font-weight:bold;text-align:center;color:red; width:100%;
+               <span id="m900" class="msg">Wait please</span>
+            </div>
+            <!--
+               <div style="width:100%;display:flex; justify-content:center;">
+               	<div style="width:50%;">
+               		<button id="id_butt_pract" class="h_buttonWhite"  style="display:none;font-size:1.2em;width:100%;height:4em;  margin-bottom:10em;"
+               					onclick="show_practice(this)" >
+               				<span id="m895_897">	
+               				Practice <br>
+               				by listening and reading 
+               				<br>
+               				a subtitle line at time or a group of them 
+               				</span>
+               		</button>	
+               	</div>
+               </div>
+               -->
+               <div id="id_practice" style="width:100%; visibility:hidden; border:1px solid green;height:100%;">
+                  <div  style="display:flex;justify-content: center;  width:100%;text-align:left;  border:0px solid violet;">
+                     <!--
+					 <div id="id_filler" style="width:0px;">&nbsp;
+                     </div>
+					 -->
+                     <div id="pract2" style="display:flex;justify-content: center;  width:100%;height:100%;
+                        text-align:left;  border:1px solid violet;">
+                        <div id="id_section_row" style="margin: auto;text-align:center;   vertical-align: top;
+                           display:flex;justify-content: center;
+						   overflow:auto;  /** overflow works only because I force height = screen height percentage in the script here below **/
+                           border:1px solid blue; ">						   
+						 
+                          
+                           <table id="id_tabSub" class="orig_txt" 
+                              style="display: block; text-align: left; vertical-align: top; border: 4px solid red; width: 100%;">
+                              <thead id="id_tabSub_th">
+                                 <tr id="id_tr_row_zero" style="background-color:grey; ">
+                                    <th id="m005" class="msg header_1">seleziona inizio</th>
+                                    <th id="m006" class="msg header_1">seleziona fine</th>
+                                    <th id="m007" class="msg header_1">mostra / nascondi<br>testo</th>
+                                    <th id="m008" class="msg header_1">mostra / nascondi<br>traduzione</th>
+                                    <th id="m013" class="msg header_1">parola<br>per<br>parola</th>
+                                    <th id="id_h_textCol" style="text-align:center;  vertical-align:bottom;        color:black;font-weight:bold;">
+                                       <!-- the content of the line below because is used to fix the column width --> 
+                                       <div id="id_h_hidden" style="visibility:hidden; font-family:monospace;
+                                          width:100%;">
+                                          Bonsoir, signori, dame, signore e signori, buona sera, signora e signori.
+                                       </div>
+                                       <div id="id_h_visible" class="header_1">
+                                          <span id="m121" class="msg header_1 fsize1" style="font-size:2em;">testo</span>
+                                       </div>
+                                    </th>
+                                    <th id="m225" class="msg header_1 c_playReal">Play una sola volta</th>
+                                    <th id="m226noTTS" class="msg header_1 c_playReal">Play all'infinito</th>
+                                    <th id="m122" class="msg header_1 c_playSynth">Play la voce scelta</th>
+                                    <th id="m123" class="msg header_1 c_playSynth">Play una voce a turno</th>
+                                    <th id="m124" class="msg header_1 c_playSynth">Play pausa tra le parole</th>
+                                    <th id="m125" class="msg header_1 ">N.</th>
+                                 </tr>
+                              </thead>
+                              <tbody id="id_tabSub_tbody"> 
+                              </tbody>
+                           </table>
+                           <!-- end of id_tabSub --> 
+						  
+                        </div>
+						<script>
+							document.getElementById("id_section_row").style.height = parseInt(screen.height*0.80) + "px" ;  
+						
+						</script>
+						
+                     </div>
+                     <!-- id_section_row -->
+                     <div style="border:1px solid violet;margin:0;width:15%;
+									display: flex; flex-direction: column; justify-content: space-around; ">
+							
+							<div class="c_playReal" style="padding:0.5em;">
+							  <b>real voice</b>
+							  <hr>
+							  <div id="id_butStop" >	
+								 <button id="id_b5b1" class="buttonTD2" style="font-size:1em; text-align:center; font-weight:bold;" 
+									onclick="onclick_pauseContinue(this)">                               
+								 <small><span class="msg" id="m114">Stop<br>Continue</span></small>                              
+								 </button>	
+								 <div style="display:none;">
+								 <button id="id_bRigthLeft" class="buttonTD2" style="font-size:1em; text-align:center; font-weight:bold;" onclick="onclick_scroll_right(this)"><span style="font-weight:bold; font-size:2em;"> ⟹ </span></button>	
+								 </div>
+							  </div>
+							  <div id="id_slider" style="border:0px solid red; width:10em;">
+								 <div>&nbsp;&nbsp;<b><span class="msg" id="m040" style="font-style: oblique;">Change the Speed</span></b>&nbsp;&nbsp;</div>
+								 <div style="display:flex;width:100%">
+									<div style="width:0.5em;">&nbsp;</div>
+									<div style="width:100%;">
+									   <input type="range" min="0.00" max="2.00" value="1.00" step="0.25" id="id_setSpeedy" onchange="onclick_changeVideoSpeed(this)" style="width:100%;">
+									</div>
+									<div style="width:0.5em;">&nbsp;</div>
+								 </div>					 
+							  </div>
+							</div>
+							
+							<div class="c_playSynth" style="padding:0.5em;">
+								 <b>Synthetic voices</b> 
+								 <hr>
+							   <div id="id_voxLangDisplay" style=""><b>Inglese </b><br><small>parlato in</small><br><b> Regno Unito</b><br><small>Google UK English Female</small>
+							   </div>
+							   <br>&nbsp;
+							   <table style="font-size:0.5em;">
+									 <tr>
+										<td id="id_906" style="width:2em;"><span id="bm126" class="msg">Tono</span></td>
+										<td style="width:0.5em;padding:0;">1</td>
+										<td style="width:0.5em;padding:0;">
+										   <input type="range" min="0.0" max="2" value="1" step="0.1" oninput="onclick_tts_changePitch(this)">
+										</td>
+									 </tr>
+									 <tr>
+										<td id="id_905" style="width:2em;"><span id="m127" class="msg">Velocità</span></td>
+										<td style="width:0.5em;padding:0;">1</td>
+										<td style="width:0.5em;padding:0;">
+										   <input type="range" min="0.0" max="2" value="1" step="0.25" oninput="onclick_tts_changeRate(this)">
+										</td>
+									 </tr>
+							   </table>								  
+							   <button id="id_sp_pause" onclick="onclick_tts_speech_pause()"><span id="m128" class="msg">Pausa</span></button>
+							   <button id="id_sp_resume" onclick="onclick_tts_speech_resume()"><span id="m129" class="msg">Riprendi</span></button>
+							   <button id="id_sp_cancel" onclick="onclick_tts_speech_cancel()"><span id="m130" class="msg">Annulla</span></button>
+							</div>
+							
+                     </div>
+                  </div>
+                  <!-- end id="pract2 -->
+                
+               </div>
+               <!-- end of practice -->
+         
+         </div>
+         <!-- end of div20 -->    
+      </div>
+      <div id="host_level2_0">
+         <!-- html_Include_2 -->  
+         <div id="id_div20buffer" class="divPage back_color_body w100 h100 " style="display: block; margin: 0px; background-color: rgb(243, 200, 157);">
+            <div id="debug1" style="display:none">
+               BEFORE
+               <div id="id_dim_before">
+                  <table>
+                     <tbody>
+                        <tr>
+                           <td>BODY</td>
+                           <td>id_body</td>
+                           <td>client  width=1865</td>
+                           <td>height=900</td>
+                           <td>offsetLeft=0</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_div20</td>
+                           <td>client  width=1865</td>
+                           <td>height=1434</td>
+                           <td>offsetLeft=0</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_div20s</td>
+                           <td>client  width=1865</td>
+                           <td>height=593</td>
+                           <td>offsetLeft=0</td>
+                           <td>offsetTop=19</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>idtb101</td>
+                           <td>client  width=1865</td>
+                           <td>height=478</td>
+                           <td>offsetLeft=0</td>
+                           <td>offsetTop=134</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_td_video</td>
+                           <td>client  width=653</td>
+                           <td>height=478</td>
+                           <td>offsetLeft=606</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_head0</td>
+                           <td>client  width=1865</td>
+                           <td>height=96</td>
+                           <td>offsetLeft=0</td>
+                           <td>offsetTop=19</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_ctrVideo</td>
+                           <td>client  width=653</td>
+                           <td>height=353</td>
+                           <td>offsetLeft=606</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                        <tr>
+                           <td>VIDEO</td>
+                           <td>myVideo</td>
+                           <td>client  width=653</td>
+                           <td>height=353</td>
+                           <td>offsetLeft=606</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_timestaff</td>
+                           <td>client  width=653</td>
+                           <td>height=0</td>
+                           <td>offsetLeft=606</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               AFTER
+               <div id="id_dim_after">
+                  <table>
+                     <tbody>
+                        <tr>
+                           <td>BODY</td>
+                           <td>id_body</td>
+                           <td>client  width=1865</td>
+                           <td>height=900</td>
+                           <td>offsetLeft=0</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_div20</td>
+                           <td>client  width=1865</td>
+                           <td>height=1430</td>
+                           <td>offsetLeft=0</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_div20s</td>
+                           <td>client  width=1865</td>
+                           <td>height=590</td>
+                           <td>offsetLeft=0</td>
+                           <td>offsetTop=19</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>idtb101</td>
+                           <td>client  width=1865</td>
+                           <td>height=474</td>
+                           <td>offsetLeft=0</td>
+                           <td>offsetTop=134</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_td_video</td>
+                           <td>client  width=653</td>
+                           <td>height=474</td>
+                           <td>offsetLeft=606</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_head0</td>
+                           <td>client  width=1865</td>
+                           <td>height=96</td>
+                           <td>offsetLeft=0</td>
+                           <td>offsetTop=19</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_ctrVideo</td>
+                           <td>client  width=653</td>
+                           <td>height=349</td>
+                           <td>offsetLeft=606</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                        <tr>
+                           <td>VIDEO</td>
+                           <td>myVideo</td>
+                           <td>client  width=646</td>
+                           <td>height=349</td>
+                           <td>offsetLeft=609</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                        <tr>
+                           <td>DIV</td>
+                           <td>id_timestaff</td>
+                           <td>client  width=653</td>
+                           <td>height=0</td>
+                           <td>offsetLeft=606</td>
+                           <td>offsetTop=0</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <!-- end of html_Include_2 -->
+      </div>
+      <div id="host_level3_0">
+         <!-- html_Include_3 -->
+         <div id="id_subtitle_container" style="display:block;border:0px solid red;">
+            <br><br>           
+            <div id="id_txta_orig_sub" style="display:none;"></div>
+            <div id="id_txta_tran_sub" style="display:none;"><br>
+            </div>
+         </div>
+      </div>
+      <div id="host_level4_0">
+         <div id="id_msg_depot" style="display:none">
+            <span class="msg" id="file">ras_player.html</span>
+            <span class="msg" id="m501">DOC/shared/ras_4_HELP.html</span>
+            <span class="msg" id="m001">ERROR</span>      
+            <span class="msg" id="m002">This html file has no parameters to use.</span>   
+            <span class="msg" id="m003">It appears to have been started by clicking on it 
+            or typing its name on the command line,
+            <br>but he can't go alone (he lacks the data to use).
+            </span> 
+            <span class="msg" id="m004">Must be called from a file created by <b>ClickByClip_builder.html</b>.</span>
+            <span class="msg" id="m021">the dialogue ends with</span>       
+            <span class="msg" id="m022">seconds and sentence completion</span>  
+            <span class="msg" id="m023">seconds and to the end of any overlapping entries</span> 
+            <span class="msg" id="m024">Play the entire clip</span> 
+            <span class="msg" id="m026">Translation of the line being played</span>              
+            <span class="msg" id="m033">Hide the clip's subtitles</span>      
+            <span class="msg" id="m034">Play the entire clip</span>     
+            <span class="msg" id="m035">Show all subtitles</span>      
+            <span class="msg" id="m036">Hide all subtitles</span>      
+            <span class="msg" id="m037">show</span> 
+            <span class="msg" id="m038">hide</span>      
+            <span class="msg" id="m039">translation of the last line</span> 
+            <span class="msg" id="m100">Specify clip type and duration</span> 
+            <span class="msg" id="m101">Change the duration of the clips</span>      
+            <span class="msg" id="m103">seconds</span>      
+            <span class="msg" id="m104">seconds and dialogue completion</span>  
+            <span class="msg" id="m105">seconds and line completion</span>     
+            <span class="msg" id="m106">lines of subtitles</span>      
+            <span class="msg" id="m107">Play</span>      
+            <span class="msg" id="m108">a new Clip</span>  
+            <span class="msg" id="m109">Change<br>type and duration</span>            	 
+            <span class="msg" id="m112">Change<br>duration</span>   
+            <span class="msg" id="m126">Duration of a Clip</span>                       
+            <span class="msg" id="ma06">Confirm</span>                                                          
+            <span class="msg" id="ma10">Press to download</span>                                                            
+            <span class="msg" id="ma12">title</span>                                                            
+            <span class="msg" id="ma17"><b>This is the subtitle area</b>,<br>you can move it by dragging the anchor
+            <br>(click on the anchor and hold down and move the mouse)
+            <br>You can change the size of this strip<br>by dragging the blue square .</span>                                                                    
+            <span class="msg" id="ma18" style="display: block;">You need to move the downloaded file from 
+            the download folder to the <b>RaS/PLAYER</b></span>
+            <span class="msg" id="ma20">title is missing</span>                                                             
+            <span class="msg" id="ma21">the original subtitle file has not been read yet or is empty</span>                                            
+            <span class="msg" id="ma24">error1 in previous step: Aspectless format line in extract_time(</span>                                                          
+            <span class="msg" id="ma25">error2 in previous step: Aspectless format line in extract_time(</span>
+            <span class="msg" id="ma26">error3 in extract_time()</span>                                                         
+            <span class="msg" id="ma30">seconds without dialogue</span>                                                                
+            <span class="msg" id="ma50">Select one or more files.</span>                                                                
+            <span class="msg" id="ma52">cannot be played</span>                                                                  
+            <span class="msg" id="ma80">Show</span>                                                             
+            <span class="msg" id="ma81">Hide</span>                                                                     
+            <span class="msg" id="mb07">or </span>                                                               
+            <span class="msg" id="mb10">The video or audio files to be played must be located in the <b>RaS/VideoAudio</b></span> 			
+            <span class="msg" id="mb12">VIDEO or Audio file</span> 
+            <span class="msg" id="mb13">Select another Video or Audio file in the <b>RaS/VideoAudio</b></span>   
+            <span class="msg" id="mb22">to improve listening and reading comprehension of a foreign language</span>    
+            <span class="msg" id="mb23">to improve listening and reading comprehension of a foreign language</span>            
+            <span class="msg" id="mb50">Error<br>the file is neither video nor audio</span>                                                            
+            <span class="msg" id="mb62">the file to run</span>                                                          
+            <span class="msg" id="mb64">is not text</span>                                                            
+            <span class="msg" id="mb65">is not a text file</span>                                                               
+            <span class="msg" id="mb67">Specify the subtitle files to use and then <br>click below<br>to download the two files</span> 
+            <span class="msg" id="mb68">Specify the subtitle files to use and then <br>click below<br>to download the two files</span>
+            <span class="msg" id="mb71">encoded in the video file</span>                                                                         
+            <span class="msg" id="mb74"><b>The folder name and path must be the same as those containing the file </b></span>
+            <span class="msg" id="mb77">has been downloaded to your download folder</span>                                                               
+            <span class="msg" id="mb78">To be able to run it, change the final part of the name to <b>.html</b></span>
+            <span class="msg" id="mb79">This file can be moved and executed in any folder on your computer</span>  
+            <span class="msg" id="mb80">80xx</span>      	
+            <span class="msg" id="mb81">the file</span>        
+            <span class="msg" id="mb82">82xx</span>     	
+            <span class="msg" id="mb83">end time</span>                                                                
+            <span class="msg" id="mb84">seconds</span>                                                          
+            <span class="msg" id="mb85">since the <br>second</span>                                                          
+            <span class="msg" id="mb86">per <br>second</span>                                                            
+            <span class="msg" id="mb87">difference <br> 1</span>                
+            <span class="msg" id="mb88">difference <br> 2</span>                        
+            <span class="msg" id="mb89">text</span>     
+            <span class="msg" id="mb90">Press the button of the line that ends with the last word spoken</span>        
+            <span class="msg" id="mb91">subtitle lines</span>                    
+            <span class="msg" id="mc85">subtitle line</span>                                                                  
+            <span class="msg" id="mc86">increased by</span>                                                                 
+            <span class="msg" id="mc87">decreased by</span> 
+            <span class="msg" id="mc88">Bilingual text</span> 
+            <span class="msg" id="m324">Text Lines</span> 			
+            <span class="msg" id="m711">Lines</span>	
+            <span class="msg" id="m715">show all lines</span>	
+            <span class="msg" id="m716">hide all lines</span>	
+            <span class="msg" id="m717">list all lines</span>	
+            <span class="msg" id="m731">go to beginning of lines in original language</span>
+            <span class="msg" id="m732">go to beginning of translated lines</span>
+            <span class="msg" id="m791">Sottotitoli in lingua originale</span>
+            <span class="msg" id="m792">Sottotitoli tradotti</span>
+            <span class="msg" id="m895">Practice<br>by listening and reading<br>a subtitle line at time or a group of them</span>
+            <span class="msg" id="m896">Practice<br>by listening<br>a second at time or a group of seconds</span>
+            <span class="msg" id="m897">Practice<br>by reading <br>a subtitle line at time or a group of them</span>
+            <span class="msg" id="m905">rate</span>
+            <span class="msg" id="m906">pitch</span>
+            <span class="msg" id="m226">Play all'infinito</span>
+         </div>
+         <!-- end of html_Include_4 -->
+      </div>
+	  <!--
+      <div style="border:0px solid blue;margin:0;width:15%;  ">
+         <div>
+            <div id="id_voxLangDisplay" style="margin-top:0.5em;"></div>
+            <table style="font-size:0.5em;width:100;">
+               <tr  style="">
+                  <td id="id_906" style="width:2em;padding-top:3em; padding-bottom:3em;"><span id="m126" class ="msg">Tono</span></td>
+                  <td style="width:0.5em;padding:0;padding-top:3em; padding-bottom:3em;">1</td>
+                  <td style="width:0.5em;padding:0;padding-top:3em; padding-bottom:3em;">
+                     <input type="range" min="0.0" max="2" value="1" step="0.1" oninput="onclick_tts_changePitch(this)">
+                  </td>
+               </tr>
+               <tr  style="padding-top:3em; padding-bottom:3em;">
+                  <td id="id_905" style="width:2em;padding-top:3em; padding-bottom:3em;"><span id="m127" class ="msg">Velocita</span></td>
+                  <td style="width:0.5em;padding:0;padding-top:3em; padding-bottom:3em;">1</td>
+                  <td style="width:0.5em;padding:0;padding-top:3em; padding-bottom:3em;">
+                     <input type="range" min="0.0" max="2" value="1" step="0.25" oninput="onclick_tts_changeRate(this)">
+                  </td>
+               </tr>
+            </table>
+         </div>
+         <div style="height:20%;" > &nbsp; </div>
+         <div>		  
+            <button id="id_sp_pause"  onclick="onclick_tts_speech_pause()"><span id="m128" class ="msg">Pause</span></button>
+            <button id="id_sp_resume" onclick="onclick_tts_speech_resume()"><span id="m129" class ="msg">Resume</span></button>
+            <br><br><br>
+            <button id="id_sp_cancel" onclick="onclick_tts_speech_cancel()"><span id="m130" class ="msg">Cancel</span></button>
+         </div>
+      </div>
+	  -->
+      <div  style="display:none;text-align:center;width:100%;">
+      <label for="id_voices">
+      <b><span id="m135" class="f_blue">Seleziona la prima voce che dovra' leggere il testo</span></b>	
+      <br><small><span id="m136">le altre voci nella stessa lingua leggeranno a turno</span></small> 
+      </label> 
+      <br><br>
+      <select id="id_voices" onchange="onclick_tts_get_oneLangVoice(this)">    
+      </select>
+      <div style="display:none">
+         <span id="id_myLang"></span>
+         <br>
+         <span id="id_lang2"></span>
+         <br>
+         <span id="m002">language</span>
+         <span id="m003">voice</span>					  
+      </div>
+      <div id="id_ext_language" style="margin-top:0.5em;"></div>
+      <br><br><br>
+      <div><button id="id1but1a"  class="button" onclick="onclick_tts_langSelected()"><span id="m137">continua</span></button></div>
+      
+	  
+	  <div style="display:none;"> 
+         <b><span id="m016-1" class="msg f_blue">Incolla qui sotto il testo in </span></b>
+         <span id="m138-1" class="msg f_blue">testo §1§</span>
+         <b><span id="id_laName" class="f_big" style="display:none;"></span></b>	
+         <b><span id="id_laName2" class="f_big" style="display:none;"></span></b>	
+      </div>
+	  
+	   <div style="display:none;">	
+		<div id="id_prototype1"  ></div><script src="./ras_player_jsHTML/ras_player_01id_prototype1.jsHTML"></script>	
+		<div id="id_prototype2"  ></div><script src="./ras_player_jsHTML/ras_player_02id_prototype2.jsHTML"></script>	
+	  </div>
+	  
+	  
+      <script src="../ras_common/ras_MESSAGES.msg"        ></script>
+      <script>
+         function custom_message_change(txt1) {
+         return txt1; 
+         } 
+	  </script>		 
+      <script src="../ras_common/ras_MESSAGE_manager.js"  onload="messageMain('B')"></script> 	  	  
+      <script src="./ras_player_js/rascbc_PLAYER_script.jstxt"         ></script> 
+	  <!--
+	  <script src="./rascbc_PLAYER_text_to_speech.jstxt" ></script> 
+	  <script src="./rascbc_PLAYER_break_text.jstxt"     ></script>  
+		-->
+      <script>				
+         document.getElementById("gotoHelp0").href = document.getElementById("mh00");
+      </script>        
+          
+    
+      <script>
+         var testDefault = false;  
+         //var testDefault = true; 	 // testDefault = true is used for test purpose only to force defaut language (English) for  header and messages.  
+         //                           // default language is used when there is no message entry (in cbc_message.msg file) for the computer console language 
+             
+      </script>	  
+	  
+      <script src="../ras_common/ras_VOICES_getVoices.js"               ></script>
+	  
+      <script>
+         let selected_voice_ix                    = 0 ;     // eg. 65 	 
+         let selected_voiceName                   = "";     // eg. Microsoft David - English (United States)"; 	
+         let	selected_voiceLangRegion             = "";     // eg. en-us	
+         let	selected_voiceLang2                  = "";     // eg. en
+         
+         let voiceList2=[]; 
+         let totNumMyLangVoices=0; 
+         let lastNumVoice = 0; 
+         let lastWordNumVoice=0;
+         let ele_voxDisplay     = document.getElementById("id_voxDisplay"); 
+         let ele_voxLangDisplay = document.getElementById("id_voxLangDisplay");  
+         	  
+      </script>
+       
+	  
+	  
+	  <script src="./ras_LineByLine_script/ras_lbl_script_0_1_def.js"         defer  ></script>	   
+	  <script src="./ras_LineByLine_script/ras_lbl_script_0_2_onclick.js"      defer  ></script>	
+	  <script src="./ras_LineByLine_script/lbl_script_1_afterGetVoices.js" defer  ></script>   
+	  <script src="./ras_LineByLine_script/ras_lbl_script_2_fill_voices.js"    defer  ></script>   
+	  <script src="./ras_LineByLine_script/ras_lbl_script_3_text_to_speech.js" defer  ></script>	  
+	  <script src="./ras_LineByLine_script/lbl_script_4_breakText.js"      defer  ></script>	 
+	  <script src="./ras_LineByLine_script/lbl_script_5_tts_otherFuns.js"  defer  ></script>	
+      <script src="./ras_LineByLine_script/lbl_script_8_TTS_REPLACE.js"    defer  ></script>
+      <script src="./ras_LineByLine_script/lbl_script_9_exec.js"           defer  ></script>    	  
+	  
+	  
+	  <!--
+      <script src="./lbl_script_2_fill_voices.js"    defer  ></script>   
+      <script src="./lbl_script_3_text_to_speech.js" defer  ></script>	  
+      <script src="./lbl_script_0_1_def.js"          defer  ></script>	   
+      <script src="./lbl_script_0_2_onclick.js"      defer  ></script>	
+      <script src="./lbl_script_1_afterGetVoices.js" defer  ></script>
+      <script src="./lbl_script_4_breakText.js"      defer  ></script>	 
+      <script src="./lbl_script_5_tts_otherFuns.js"  defer  ></script>	
+      <script src="./lbl_script_8_TTS_REPLACE.js"    defer  ></script>
+      <script src="./lbl_script_9_exec.js"           defer  ></script>   
+--> 	  
+     
+	  <!--
+      <script src="./js0_4_word_cbc_PLAYER_text_to_speech_word.jstxt"></script>
+      <script src="./ras_js5_cbc_PLAYER_script.jstxt"         ></script> 	  
+      <script src="./js6_cbc_TTS_REPLACE.jstxt" > </script>  
+      <script src="./js9_script_firstexec.jstxt" > </script>
+      <script>				
+         document.getElementById("gotoHelp0").href = document.getElementById("mh00");
+      </script>
+	  -->
+      <div id="id_msg_depot2" style="display:none">  
+         <span id="m014" class="msg"><br>per migliorare <br> la comprensione delle lingue straniere</span><br>
+         <span id="m015" class="msg">ascoltando un testo <br>letto una riga per volta, una parola per volta</span>
+         <span id="m016">Paste the <b>§1§</b> text here below</span>
+         <span id="m100">VVm100 To synchronize subtitles with speech   ZVm100></span>
+         <span id="m101">VVm101 Select a group of subtitle lines ZVm101></span>
+         <span id="m102">VVm102 Practice<br>by listening and reading a few subtitle lines at time ZVm102></span>
+         <span id="m103">VVm103 Practice<br>by listening<br>only a few seconds at a time ZVm103></span>
+         <span id="m104">VVm104 Practice<br>by listening (synthetic voice) and reading  ZVm104></span>
+         <span id="m105">VVm105 Rate ZVm105></span>   
+         <span id="m106">VVm106 end time ZVm106></span>
+         <span id="m107">VVm107 seconds ZVm107></span>
+         <span id="m108">VVm108 since the <br>second ZVm108></span>
+         <span id="m109">VVm109 per <br>second ZVm109></span>
+         <span id="m110">VVm110 text ZVm110></span>
+         <span id="m111">VVm111 Subtitles ZVm111</span>			
+         <span id="m112">VVm112 Press the button of the line that ends with the last word spoken ZVm112></span>
+         <span id="m113">VVm113 subtitle lines ZVm113></span>
+         <span id="m114">VVm114 subtitle line ZVm114></span>
+         <span id="m115">VVm115 show all subtitles ZVm115></span>									
+         <span id="m116">VVm116 hide all subtitles ZVm116></span>  
+         <span id="m117">VVm117 increased by ZVm118></span>
+         <span id="m118">VVm118 decreased by ZVm118></span>
+         <span id="m119">VVm119 Bilingual Text ZVm119></span> 
+         <span id="m120">spoken in</span>	
+         <span id="m132">the text in source language is missing</span>	
+         <span id="m133">the translated text is missing</span>	
+         <span id="m134">but if that's ok, write 3 dots in a row <b>§...§</b></span>  
+         <span id="m138">§1§ text</span>
+      </div>
+    
+   </body>
+</html>

@@ -1,0 +1,19 @@
+"use strict";
+/*  
+ClipByClip: A tool to practice language comprehension
+Antonio Cigna 2021/2022
+license MIT: you can share and modify the software, but you must include the license file 
+*/
+/* jshint strict: true */
+/* jshint esversion: 6 */
+/* jshint undef: true, unused: true */
+//--------------------------------------------
+var selected_language_fromBuilder; 
+var language_parameters;  
+let selected_lang_id ; 
+let selected_numVoices = 0;
+let maxNumVoices = 6;
+//-----------------------------
+let cbc_LOCALSTOR_key = "";
+//  the LS_... variables here after have their values stored in window.localStorage so that they can be retrieved in the next sessions 
+//  all this value are put in a list and saved in one variable the name of which contains the title of the page (each page has its own values) 

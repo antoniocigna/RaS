@@ -1,0 +1,117 @@
+"use strict";
+/*  
+RaS - A tool to practice language comprehension: A tool to practice language comprehension
+Antonio Cigna 2023
+license MIT: you can share and modify the software, but you must include the license file 
+*/
+/* jshint strict: true */
+/* jshint esversion: 6 */
+/* jshint undef: true, unused: true */
+//-----------------------------------------
+var currScript = document.currentScript.src; var bar1 = currScript.lastIndexOf("\\");var bar2 = currScript.lastIndexOf("/"); 
+console.log("LOADED file SCRIPT " + currScript.substring( 1+Math.max(bar1,bar2) )) ;	
+//--------------------------------------------
+// this is a part of ras_PLAYER.html file  ( see last line in this file )
+// 	the variable below will become a html element table listing all rows in a text    
+let buttonSymbol = `   
+						<hr>
+                        <div style="width:92%;">
+                           <button class="h_buttonWhite" style="font-size:0.5em; border: 1px solid black;"
+                              onclick="button_symb_meaning()"	>
+                           <span id="m218" style="font-size:1.0em;font-weight:bold;">Significato dei pulsanti</span>  			
+                           &nbsp;&nbsp;
+                           <span style="font-size:0.8em;">
+                           <span style="font-size:2em;width:auto;height:1.4em;">→</span> &nbsp; 
+                           <span style="font-size:2em;width:auto;height:1.4em;">←</span> &nbsp; 
+                           <span style="font-size:2em;width:auto;height:1.4em;">🗣</span> &nbsp; 
+                           <span style="font-size:2em;width:auto;height:1.4em;">∞</span> &nbsp; 
+                           <span style="font-size:2em;width:auto;height:1.4em;">📖</span> &nbsp; 
+                           <span style="font-size:2em;width:auto;height:1.4em;">📕</span> &nbsp;  
+                           <span style="font-size:2em;width:auto;height:1.4em;">
+                           <span>T</span>
+                           </span> &nbsp;  
+                           <span style="font-size:2em;width:auto;height:1.4em;">
+                           <span>t</span>
+                           </span>
+                           <input type="range" min="0.25" max="2" value="1" step="0.25" style="width:3em;"> 
+                           </span>
+                           &nbsp;&nbsp;
+                           </button>	
+                        </div>
+                        <div id="id_legend" 
+								style="display:none; width:100%;border:0px solid black;text-align:center; font-size:0.8em; background-color:lightgrey;">                          
+							<br>
+                           <div style="width:80%;border:0px solid black;display:flex;">
+                              <table style="font-size:0.5em;width:33%;color:black;border:0px solid black;text-align:left;">
+                                 <tbody>
+                                    <tr>
+                                       <td style="width:5%;"></td>
+                                       <td></td>
+                                    </tr>
+                                    <tr>
+                                       <td><span style="font-size:2em;width:auto;height:1.4em;">→</span></td>
+                                       <td id="m119">premi per stabilire l'inizio delle selezione delle righe</td>
+                                    </tr>
+                                    <tr>
+                                       <td><span style="font-size:2em;width:auto;height:1.4em;">←</span></td>
+                                       <td id="Xm120">premi per stabilire la fine della selezione delle righe </td>
+                                    </tr>
+                                    <tr>
+                                       <td><span style="font-size:2em;width:auto;height:1.4em;">🗣</span></td>
+                                       <td id="m121">premi per riprodurre                                    </td>
+                                    </tr>
+                                    <tr>
+                                       <td><span style="font-size:2em;width:auto;height:1.4em;">∞</span></td>
+                                       <td id="m122">premi per riprodurre e poi ripetere all'infinito  </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table style="font-size:0.5em;width:33%;color:black;border:0px solid black;text-align:left;">
+                                 <tbody>
+                                    <tr>
+                                       <td style="width:5%;"></td>
+                                       <td></td>
+                                    </tr>
+                                    <tr>
+                                       <td><span style="font-size:2em;width:auto;height:1.4em;">📖</span></td>
+                                       <td id="m167">the line is visible, press to hide it</td>
+                                    </tr>
+                                    <tr>
+                                       <td><span style="font-size:2em;width:auto;height:1.4em;">📕</span></td>
+                                       <td id="m168">the row is invisible, press to make it visible</td>
+                                    </tr>
+                                    <tr>
+                                       <td><span style="font-size:2em;width:auto;height:1.4em;"><span>T</span></span></td>
+                                       <td id="m169">the translation is hidden, press to make it visible</td>
+                                    </tr>
+                                    <tr>
+                                       <td><span style="font-size:2em;width:auto;height:1.4em;"><span>t</span></span></td>
+                                       <td id="m170">the translation is visible, press to hide it</td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table style="font-size:0.5em;width:33%;color:black;border:0px solid black;text-align:left;">
+                                 <tbody>
+                                    <tr>
+                                       <td style="width:5%;"></td>
+                                       <td></td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                          <input type="range" min="0.25" max="2" value="1" step="0.25" style="width:3em;"> 							
+                                       </td>
+                                       <td id="m171">correzione del tempo di inizio o fine della riga</td>
+                                    </tr>
+                                    <tr>
+                                       <td></td>
+                                       <td></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>						    
+                           <hr>
+  `; // end of buttonSymbol
+	  
+	  document.getElementById("id_symb_meaning").innerHTML = buttonSymbol;
+	  
+//-------------------------------------------------------------------------	  

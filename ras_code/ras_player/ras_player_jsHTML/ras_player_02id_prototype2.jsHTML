@@ -1,0 +1,125 @@
+"use strict";
+/*  
+RaS - A tool to practice language comprehension: A tool to practice language comprehension
+Antonio Cigna 2023
+license MIT: you can share and modify the software, but you must include the license file 
+*/
+/* jshint strict: true */
+/* jshint esversion: 6 */
+/* jshint undef: true, unused: true */
+//-----------------------------------------
+var currScript = document.currentScript.src; var bar1 = currScript.lastIndexOf("\\");var bar2 = currScript.lastIndexOf("/"); 
+console.log("LOADED file SCRIPT " + currScript.substring( 1+Math.max(bar1,bar2) )) ;	
+//--------------------------------------------
+// this is a part of ras_PLAYER.html file  ( see last line in this file )
+// 	the variable below will become a html element table listing all words in a line    
+let table_prototype2= `				  
+                     <table style="border:0px solid red;width:100%;margin-top:1em;">
+                        <tbody>						
+                           <tr id="widtr_§w1§_m2"  style="display:none; background-color:grey; height:1.5em;">
+                              <td class="c_m2"></td>
+                              <td class="c_m2"></td>
+                              <td class="c_m2"></td>
+                              <td class="c_m2"></td>
+                              <td class="c_m2"></td>
+                              <td class="c_m2"></td>
+                              <td class="c_m2"></td>
+                           </tr>
+
+                           <tr id="widtr_§w1§_m1" class="playBut1" style="display:none;background-color:lightgrey;">
+                              <td class="c_m1"></td>
+                              <td class="c_m1"></td>
+                              <td class="playBut1 c_m1">
+                                 <button class="buttonTD2" id="widb_§w1§_m" onclick="onclick_tts_word_OneClipRow_showHide_sub( this,true,false,true,true)">
+                                 <span style="display:none;font-size:2em;height:1.4em;" >📖</span>
+                                 <span style="display:block;font-size:2em;height:1.4em;">📕</span>
+                                 </button>	  
+                              </td>
+                              <td class="c_m1"></td>
+                              <td class="playBut1 c_m1">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_m1_row3(this,§w1§,false,false)">
+                                 <span style="font-size:2em;height:1.4em;">🗣</span>
+                                 </button>
+                              </td>
+                              <td class="playBut1 c_m1">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_m1_row3(this,§w1§,false,true)">
+                                 <span style="font-size:2em;height:1.4em;">🗣</span><span style="font-size:0.9em;">+</span>
+                                 </button>
+                              </td>
+                              <td class="playBut1 c_m1">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_m1_row3(this,§w1§,true,false)">
+                                 <span style="font-size:2em;height:1.4em;">🗣</span><span style="font-size:0.9em;">𝄐</span>
+                                 </button>
+                              </td>
+                           </tr>
+
+
+                           <tr id="widtr_§w1§" style="background-color: lightgrey;">
+                              <td class="arrow12">
+                                 <button class="buttonFromToIx" id="wb1_§w1§" onclick="onclick_tts_word_arrowFromIx(this,§w1§,true,false)">
+                                 <span style="font-size:1em;height:1.4em;">→</span>
+                                 </button>
+                              </td>
+                              <td class="arrow12">
+                                 <button class="buttonFromToIx" id="wb2_§w1§" onclick="onclick_tts_word_arrowToIx(this,§w1§,true,false)">
+                                 <span style="font-size:1em;height:1.4em;">←</span>
+                                 </button>
+                              </td>
+                              <td class="playBut1">
+                                 <button class="buttonTD2" id="widb_§w1§" onclick="onclick_tts_word_show_row(this,§w1§,true,false)">		
+                                 <span style="display: none;  font-size: 2em; height: 1.4em;">📖</span> 
+                                 <span style="display: block; font-size: 2em; height: 1.4em;">📕</span>				
+                                 </button>
+                              </td>
+                              <td>
+                                 <div class="suboLine" style="display: none;" id="widc_§w1§">§wordOrig§</div>
+                                 <div></div>
+                                 <div></div>
+                                 <div style="display:none;" id="widtts_§w1§">§wordTTS§</div>
+                              </td>
+                              <td class="playBut1 c_m0">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_word3(this,§w1§,false,false)">
+                                 <span style="font-size:2em;height:1.4em;">🗣</span>
+                                 </button>
+                              </td>
+                              <td class="playBut1 c_m0">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_word3(this,§w1§,false,true)">
+                                 <span style="font-size:2em;height:1.4em;">🗣</span><span style="font-size:0.9em;">+</span>
+                                 </button>
+                              </td>
+                              <td class="playBut1 c_m0">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_word3(this,§w1§,true,false)">
+                                 <span style="font-size:2em;height:1.4em;">🗣</span><span style="font-size:0.9em;">𝄐</span>
+                                 </button>
+                              </td>
+                           </tr>
+
+                        </tbody>
+                     </table>
+	`; // end of prototype2
+	
+	document.getElementById("id_prototype2").innerHTML = table_prototype2; 	
+	
+	//----------------------------------------------------------
+	function fillInProto2( list_wordsOrig, list_wordsTTS) {
+		let wrk_proto1 = document.getElementById("id_prototype2").innerHTML; 
+		console.log("fillin  wrk_proto1 = " + wrk_proto1); 
+		let j1 = wrk_proto1.indexOf("<tr"); 
+		let j2 = wrk_proto1.lastIndexOf("</tr>"); 	
+		let protoFirst = wrk_proto1.substring(0,j1).trim(); 
+		let protoTR = wrk_proto1.substring(j1,j2+5).trim(); 
+		let protoLast  = wrk_proto1.substring(j2+5).trim(); 
+		
+		let newProto2= protoFirst; 
+		let newProtoTR = "";
+		let word0Orig, word0TTS; 
+		for(let p1=0; p1 < list_wordsOrig.length; p1++) {
+			word0Orig =  list_wordsOrig[p1]; 
+			word0TTS  =  list_wordsTTS[p1]; 
+			newProtoTR += protoTR.replaceAll("§w1§",p1).replaceAll("§wordOrig§",word0Orig).replaceAll("§wordTTS§",word0TTS);
+		}
+		return protoFirst + newProtoTR + protoLast; 
+	}
+	//------------------------------------------
+	  
+//-----------------------------------------------------------------------------------------	  
