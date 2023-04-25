@@ -39,11 +39,14 @@ function onclick_tts_get_oneLangVoice(this1) {
 	}
 	**/
 	var ix = this1.value; 	
-
+	/**
 	if (listVox.length > 0) {  // if this is not the first language setting    
 		console.log("\nx\nx\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nfill the voices again \nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n") 
 		tts_2_fill_the_voices();  //  tts_9_toBeRunAfterGotVoicesPLAYER();
 	}
+	**/
+	tts_2_fill_the_voices();
+	
 	var langRegion = get_languageName( voices[ix].lang ) ;
 	var langname = langRegion.split("-")[0]; 
 	document.getElementById("id_ext_language").innerHTML = voices[ix].lang + " " + langRegion; // in common/cbc_MESSAGE_manager.js 
@@ -174,7 +177,7 @@ function onclick_tts_playSynthVoice_row2(this1, ixTD123, swPause,swNewVoice) {
 		if (tts_3_play_or_cancel(this1) < 0) {
 				return;
 			}	
-	
+		if (totNumMyLangVoices < 1) return; 
 		if (swNewVoice) {
 			lastNumVoice++; 
 			if (lastNumVoice >= totNumMyLangVoices) lastNumVoice = 0; // to change voice on each cycle

@@ -234,7 +234,7 @@ function tts_3_show_speakingVoice(objtxt_to_speak) {
 
 //------------------------------------
 function tts_3_set_speech_Parms(objtxt_to_speak) {
-
+	if (totNumMyLangVoices < 1) return; 
 	//console.log("tts_3_set_speech_Parms() lastNumVoice=" + lastNumVoice + " lang=" + listVox[lastNumVoice][0]);
 	var myVoice = listVox[lastNumVoice][1];
 	var voice_lang2 = myVoice.lang.substr(0,2); 

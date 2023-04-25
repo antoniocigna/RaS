@@ -30,38 +30,65 @@ function tts_2_fill_the_voices() {
 	console.log("selected_langRegion=" + selected_langRegion  + " (from url parameter)"  ); 
 	
 	
-	console.log("voices.length=" + numTotVoices); 
-	console.log("voices[0]=" + voices[0].name); 
-	console.log("voices["+(numTotVoices-1)+"]=" + voices[(numTotVoices-1)].name); 
+	console.log( numTotVoices + " voices loaded" ); 
+	//console.log("voices[0]=" + voices[0].name); 
+	//console.log("voices["+(numTotVoices-1)+"]=" + voices[(numTotVoices-1)].name); 
 	
+	selected_voice_ix = -1;
 	
 	let selected_voiceLang2 = selected_langRegion.substr(0,2); 	
-	
+	var swNotFound = true;
 	for(var ix=0; ix < numTotVoices; ix++) {
 		if (selected_voice_name == voices[ix].name) {
+			swNotFound = false;
 			selected_voice_ix        = ix; 		
 			console.log("voice found in getVoices() --> index: selected_voice_ix=" + selected_voice_ix); 
 			break;
-		}
-		
+		}		
 	}
 	var vox;
 	listVox = [];
-	
-	//firstly the chosen language-voice
-	vox = voices[selected_voice_ix];
-	 
-	listVox.push( [vox.lang , vox] );  
-	if (selected_langRegion != vox.lang) {
-		console.log("tts_2_fill_the_voices() " + "\n\tselected_voice_ix=" + selected_voice_ix + 
-			"\n\tselected_voice_name = " + selected_voice_name +
-			"\n\tselected_langRegion = " + selected_langRegion +
-			"\n\tselected_voiceLang2 = " + selected_voiceLang2); 
-		console.log("ERROR vox.lang (from voices[selected_voice_ix]) = " + vox.lang  + 
-				" vs " + "selected_langRegion=" +selected_langRegion);  
-		console.log(signalError)		
+	totNumMyLangVoices=0; 
+	var ixLa4=-1;var ixLa2=-1;
+	if (swNotFound) {
+		console.log("voce name '" + selected_voice_name + "'  not found, maybe you have not used the same browser as in the Builder phase"); 
+		console.log("\tnow it is looked for the same language-region or at least the same language");
+		for(var v2=0; v2 < voices.length; v2++) {
+			vox = voices[v2];
+			if (vox.lang == selected_langRegion) {
+					console.log("\tfound the same language-region '" + selected_langRegion + "' voce name '" + vox.name+"'"); 
+					ixLa4 = v2;
+					break; 
+			}	
+			if (ixLa2 >= 0) continue;
+			if (vox.lang.substr(0,2) == selected_voiceLang2) ixLa2 = v2;	
+		}	
+		if (ixLa4 < 0) {
+				console.log("\tthe same language-region has not been found,");
+				ixLa4 = ixLa2;
+				if (ixLa4 > 0) {
+					vox = voices[ixLa4];	
+					console.log("\tbut the same language has been found '" + vox.lang + "' voce name '" + vox.name+"'"); 				
+				}
+		}		
+		if (ixLa4 >=0) selected_voice_ix = ixLa4;	
 	}
-	
+	if (selected_voice_ix < 0) {
+		selected_voice_ix = 99999;	
+		console.log("the required voice language '"  + selected_voiceLang2 + 
+			"' has not been found, no voice will be used"); 
+		listVox = []; 	
+		totNumMyLangVoices=0;
+		hide_synthVoices();
+		return;		
+	}
+	if (selected_voice_ix < numTotVoices) { 
+		vox = voices[selected_voice_ix];
+		selected_langRegion = vox.lang; 
+		selected_voiceLang2 = selected_langRegion.substr(0,2); 	
+		selected_voice_name = vox.name; 
+		listVox.push( [vox.lang , vox] );  
+	}
 	//------------------------------------------
 	// secondly the same language-region 
 	for(var v2=0; v2 < voices.length; v2++) {
@@ -81,7 +108,7 @@ function tts_2_fill_the_voices() {
 		listVox.push( [vox.lang , vox] );  
 	}
 	//---------------------------------	
-	//
+ 
 	for(v3=0; v3 < listVox.length; v3++) {		
 		var vv1, vv2; 
 		[vv1,vv2] = listVox[v3]
@@ -90,6 +117,7 @@ function tts_2_fill_the_voices() {
 	//----------------	
 	var chosenIxVox=0;
 	//-----------
+	totNumMyLangVoices = listVox.length; 
 	if (listVox.length == 0) {
 		return; 
 	}
@@ -102,77 +130,16 @@ function tts_2_fill_the_voices() {
 	var vv3=0; var v3;
 	var idhvox, idh2, eleH; 
 	totNumMyLangVoices = listVox.length;
-	
  	
 } // end of fill_the_voices()
-
-
-
+//-------------------
+function hide_synthVoices() {
+	console.log("hide all buttons about synthetic voices"); 	
+	document.getElementById("id_play_synth"    ).style.display    = "none"; 
+	document.getElementById("id_col_5_synth"   ).style.visibility = "collapse"; 
+	document.getElementById("id_col_9_11_synth").style.visibility = "collapse"; 
+}
 //======================================	
-function TOGLItts_2_fill_the_voices() { 
-	
-	console.log("voices.length=" + voices.length); 
-	
-	var vox;
-	listVox = [];
-	
-	//firstly the chosen language-voice
-	vox = voices[selected_voice_ix];
-	 
-	listVox.push( [vox.lang , vox] );  
-	if (selected_langRegion != vox.lang) {
-		console.log("tts_2_fill_the_voices() " + "\n\tselected_voice_ix=" + selected_voice_ix + 
-			"\n\tselected_voice_name = " + selected_voice_name +
-			"\n\tselected_langRegion = " + selected_langRegion +
-			"\n\tselected_voiceLang2 = " + selected_voiceLang2); 
-		console.log("ERROR vox.lang (from voices[selected_voice_ix]) = " + vox.lang  + 
-				" vs " + "selected_langRegion=" +selected_langRegion);  
-		console.log(signalError)		
-	}
-	
-	//------------------------------------------
-	// secondly the same language-region 
-	for(var v2=0; v2 < voices.length; v2++) {
-		vox = voices[v2];
-		if (v2 == selected_voice_ix) continue; 
-		
-		if (selected_langRegion != vox.lang ) continue;	
-		
-		listVox.push( [vox.lang , vox] );  		
-	}
-	//---------------------------------	
-	// thirdly the same language
-	for(var v2=0; v2 < voices.length; v2++) {
-		vox = voices[v2];
-		if (selected_langRegion == vox.lang ) continue;	
-		if (selected_voiceLang2 != vox.lang.substr(0,2) ) continue;				
-		listVox.push( [vox.lang , vox] );  
-	}
-	//---------------------------------	
-	//
-	for(v3=0; v3 < listVox.length; v3++) {		
-		var vv1, vv2; 
-		[vv1,vv2] = listVox[v3]
-		console.log("listVox[" +v3 + "] = " + vv1 + " " + vv2.name);
-	}
-	//----------------	
-	var chosenIxVox=0;
-	//-----------
-	if (listVox.length == 0) {
-		return; 
-	}
-	console.log("listVox length=" + listVox.length); 
-	voice_toUpdate_speech = listVox[0][1] ;	
-
-	
-	var voxLang;
-	var pVox = ""; var xbr; 
-	var vv3=0; var v3;
-	var idhvox, idh2, eleH; 
-	totNumMyLangVoices = listVox.length;
-	
- 	
-} // end of fill_the_voices()
 
 //--------------------------
 function test_theVoice(lang2, myVoice) {
