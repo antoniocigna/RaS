@@ -6,35 +6,7 @@ license MIT: you can share and modify the software, but you must include the lic
 */ 
 /* jshint strict: true */
 /* jshint esversion: 6 */
-/* jshint undef: true, unused: true */	 
-
-/*  used in html   onchangeInputRange1  */
-/*  used in html   onclick_OneClipRow_play  */
-/*  used in html   onclick_22OneClipRow_showHide_sub  */
-/*  used in html   onclick_OneClipRow_showHide_sub  */
-/*  used in html   onclick_OneClipRow_showHide_tran  */
-/*  used in html   onclick_ClipSub_Play  */
-/*  used in html   onclick_changeVideoSpeed  */
-/*  used in html   onloaded_fun  */
-/*  used in html   onclick_change_diff_sync  */
-/*  used in html   onclick_skipThisPiece  */
-/*  used in html   onclick_pauseContinue  */
-/*  used in html   onclick_display_subtitle  */
-/*  used in html   onclick_playOrNot_to_sync  */
-/*  used in html   onclick_showall_subtitles  */
-/*  used in html   onclick_back_from_sub  */
-/*  used in html   onclickOnOff  */
-/*  used in html   onclick_show_color  */
-/*  used in html   onclick_show_statist  */
-/*  used in html   onclick_reset_initial_colors  */
-/*  used in html   onclick_search_the_best_contrast_textColor  */
-/*  used in html   get_last_clip_ix  */
-/*  used in html   onclick_show_syncstaff  */
-/*  used in html   fun_end_subtitle  */
-/*  used in html   onclick_downloadThis_HTML */
-
-//=============================================    								
-// 1 beg. former file player_2_a_1_var_only.jstxt             								
+/* jshint undef: true, unused: true */	        								
 
 /**
 Javascript ES6 - ECMAScript 2015 was the second major revision to JavaScript. ECMAScript 2015 is also known as ES6 and ECMAScript 6.
@@ -359,6 +331,11 @@ let eleTabSub_save_clientWidth, eleTabSub_save_clientHeight;
 let sw_eleTabSub_widthInit = true; 
 let t_swMove = true;
 
+
+let ele_show_numRow  = document.getElementById("id_show_numRow" ); 
+let ele_show_numWord = document.getElementById("id_show_numWord");  
+let msg_rowNum = ""; 
+let msg_wordNum= ""; 
 //-----------------------------
 
 
@@ -999,7 +976,7 @@ function fun_set_localStorage_ctrvar_item_from_vars() {
 	
 	localStorage.setItem( cbc_LOCALSTOR_ctrkey, JSON.stringify( cbc_LOCALSTOR_ctrval_list )); 
 
-	
+	/**
 	document.getElementById("st_1nclip").innerHTML = LS_CTR_6logon_num_play; 
 	document.getElementById("st_1elap").innerHTML  = fun_timeStr(LS_CTR_7logon_elapsed);
 	document.getElementById("st_1vidtm").innerHTML = fun_timeStr(LS_CTR_8logon_videoRunTime);
@@ -1018,6 +995,7 @@ function fun_set_localStorage_ctrvar_item_from_vars() {
 	//document.getElementById("id_statist").innerHTML = stat0 + "\n" + stat12 + "\n" +  stat1 + "\n" + stat2 + "\n" + "</table> \n";	
 	
 	//fun_list_localStorageItems();
+	***/
 	
 }
 
@@ -2928,7 +2906,6 @@ function highlightRow(ele1) {
 //-------------------------
 function removeLastBold() {
 	if (last_BoldRow) {
-		console.log("removeLastBold() " + last_BoldRow.id);  
 		
 		last_BoldRow.classList.remove("boldLine");
 		last_BoldRow.style.backgroundColor = null; 
@@ -2941,13 +2918,14 @@ function removeLastBold() {
 //-------------------------------------------
 function fun_oneClipRow_showHide_ORIG_if_book_opened( ele1, ele_to_test , z3) {
 	
-	console.log("fun_oneClipRow_showHide_ORIG_if_book_opened( z3=" + z3 + " to_test=" + ele_to_test.id + " ele1=" +ele1.id );
 	
 	var ele1_tr = ele1.parentElement.parentElement ;
 
 	var last_tr; 
 	removeLastBold(); 
-	console.log(" fun_oneClipRow_showHide_ORIG_if_book_opened() " + ele1.id); 
+	
+
+	
 	if (ele1 == null) {return;}	
 	
 	last_BoldRow = ele1; 
@@ -3315,8 +3293,6 @@ function set_PlayIxFromToTime( begix, endix, swLoop) {
 	lastPlayRowToTime   = line_list_o_to1[endix]  ;       //   + parseFloat( document.getElementById("id_delta_tt" + endix).value ) ; 
 	lastPlayListFrom.push( 9999999999); 
 
-	console.log("       set_PlayIxFromToTime( begix, endix, swLoop) " + " lastPlayRowFromTime=" + lastPlayRowFromTime +" lastPlayRowToTime=" +lastPlayRowToTime );
-	
 	
 } // end of set_PlayIxFromToTime() 
 //--------------
@@ -3341,6 +3317,7 @@ function play_or_cancel(this1) {
 }
 //---------------------
 function onclick_OneClipRow_play_Loop3(this1,  z3 , swLoop) {
+	fun_show_numRow(z3) ;
 	removeLastBold();
 	fun_invisible_prev_fromto(z3);
 	if (sw_tts) {  // TTS 
@@ -4357,6 +4334,7 @@ function fun_running_video_clip() {
 	
 	ele_time_video.innerHTML = lineTime(time_secs, ix1);  
 	
+	
 	fun_playVideo(); 
 	
 } // end of fun_running_video_clip()
@@ -4380,13 +4358,17 @@ function fun_updateVideo_CheckStop(timeFrom, timeTo) {
 
 //-------------------------------------------------------
 function lineTime( time_secs, ixClip) {
+
 	let hhmmss = fun_N_secs_to_hhmmssmmm(time_secs);
 	let msg = "";
     msg += hhmmss.substr(0, 8) + " = " + time_secs.toFixed(3) + " ";
     msg += document.getElementById("mb84").innerHTML; // "884 secondi"; 	 
 	if ((sw_sub_onfile == false) || (numOrig < 2)) { // there is no subtitile file 	
+		console.log("lineTime( .., ixClip=" + ixClip + ") return");  
 		return msg;
 	}
+	
+	fun_show_numRow(ixClip) ;	 
 	
     msg += "    ";
     msg += " " + document.getElementById("mc85").innerHTML + " " + ixClip;	
@@ -4414,6 +4396,19 @@ function lineTime( time_secs, ixClip) {
 	msg += ")";
     return msg;
 }
+//------------------------------------
+function fun_show_numRow(ix1) {
+	
+	if (msg_rowNum == "") {
+		msg_rowNum  = document.getElementById("m470").innerHTML; 
+		msg_wordNum = document.getElementById("m471").innerHTML; 	
+	}
+
+	ele_show_numRow.innerHTML  = msg_rowNum.replace("§r1§",ix1); 
+	ele_show_numWord.innerHTML = "";
+	ele_show_numWord.style.visibility = "hidden";
+
+} // end of ele_show_numRow
 //---------------------------
 function fun_running_video_emul(time_secs) {
 	
@@ -4469,7 +4464,7 @@ function fun_running_video_emul(time_secs) {
 		//console.log("elix last_ixClip=" + last_ixClip + " " + elix.outerHTML.substring(0,60) );  
 		fun_scroll_tr_toTop(elix, false); 
 	}
-	
+	fun_show_numRow( ixClip ) ; 
 
     msg += "    ";
     msg += " " + document.getElementById("mc85").innerHTML + " " + ixClip;	
@@ -5422,7 +5417,7 @@ function fun_set_time_to_show(time_secs, swpause) {
     if (ixClip < 0) {
         ixClip = 0;
     }
-
+	fun_show_numRow( zixClip ) ; 
     msg += " " + document.getElementById("mc85").innerHTML + " " + ixClip;
     msg += " (" + line_list_o_from1[ixClip].toFixed(3);
     msg += "  :  " + line_list_o_to1[ixClip].toFixed(3);

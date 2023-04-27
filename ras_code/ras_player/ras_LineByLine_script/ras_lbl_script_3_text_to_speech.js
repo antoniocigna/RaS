@@ -122,7 +122,7 @@ function tts_3_word_build_td_voices() {
 
 
 // ===================================================================
-function tts_3_spezzaRiga3(orig_riga, tts_riga) {
+function tts_3_spezzaRiga3(id_row, orig_riga, tts_riga) {
 	
     var orig_riga2 = orig_riga.replaceAll(". ", ". §").replaceAll("! ", "! §").
 		replaceAll("? ", "? §").replaceAll("; ", "; §").replaceAll(": ", ": §").replaceAll(", ", ", §").replaceAll(" ", " §");
@@ -144,51 +144,10 @@ function tts_3_spezzaRiga3(orig_riga, tts_riga) {
             listaParo_tts.push(list2[f]);
         }
     }
- 	return fillInProto2( listaParole, listaParo_tts);	
+ 	return fillInProto2( id_row, listaParole, listaParo_tts);	
 
 } // end of tts_3_spezzaRiga3()
 
-//------------------------------- 
-
-function TOGLI_tts_3_spezzaRiga2(orig_riga, tts_riga) {
-    var endix2 = -1;
-    var orig_riga2 = orig_riga.replaceAll(". ", ". §").replaceAll("! ", "! §").replaceAll("? ", "? §").replaceAll("; ", "; §").
-    replaceAll(": ", ": §").replaceAll(", ", ", §").replaceAll(" ", " §");
-    if (tts_riga == "") tts_riga = orig_riga;
-    var tts_riga2 = tts_riga.replaceAll(". ", ". §").replaceAll("! ", "! §").replaceAll("? ", "? §").replaceAll("; ", "; §").
-    replaceAll(": ", ": §").replaceAll(", ", ", §").replaceAll(" ", " §");
-    //console.log("\tspezzaRiga2( orig_riga=" + orig_riga + "\n\t\ttts_riga=" + tts_riga); 
-    var listaParole = [];
-    var listaParo_tts = [];
-    var list1 = orig_riga2.split("§");
-    var list2 = tts_riga2.split("§");
-    //console.log( list1.length + " " + list2.length); 
-    if (list2.length != list1.length) list2 = orig_riga2.split("§");
-
-    for (var f = 0; f < list1.length; f++) {
-        if (list1[f].trim() != "") {
-            listaParole.push(list1[f]);
-            listaParo_tts.push(list2[f]);
-        }
-    }
-
-
-    var parola1, paro_tts;
-
-    var frase_showTxt = '<table style="border:0px solid red;width:100%;margin-top:1em;"> \n';
-    
-    endix2 = listaParole.length;
-
-    for (let z3 = 0; z3 < listaParole.length; z3++) {
-        parola1 = listaParole[z3];
-        paro_tts = listaParo_tts[z3];
-        let rowclip = word_tr_allclip.replaceAll("§1§", z3).replaceAll("§4txt§", parola1).replaceAll("§ttsWtxt§", paro_tts);
-        frase_showTxt += rowclip + "\n";
-    } // end of for z3
-
-    return frase_showTxt += '</table>\n';
-
-} //  end of TOGLI_spezzaRiga2()
 //------------------------------------------
 
 function tts_3_word_show_hideORIG(z3, isWord) {
@@ -216,12 +175,11 @@ function tts_3_call_boldCell_ix(this1, ixVoice, wh) {
 
 function tts_3_show_speakingVoiceFromVoiceLangName(voice_lang, voice_name) {
 
-    var msg1 = document.getElementById("m120").innerHTML; //  spoken in
+    var msg1 = document.getElementById("m420").innerHTML; //  spoken in
     var lang0 = get_languageName(voice_lang).split("-");
 
     var msg = "<b>" + lang0[0] + "</b><br><small>" +
-        document.getElementById("m120").innerHTML + //  spoken in
-        "</small><br><b>" + lang0[1] + "</b><br>";
+        msg1 + "</small><br><b>" + lang0[1] + "</b><br>";
 
     ele_voxLangDisplay.innerHTML = msg + "<small>" + voice_name + "</small>";
 
@@ -244,6 +202,10 @@ function tts_3_set_speech_Parms(objtxt_to_speak) {
 	if (voice_lang2 != selected_voiceLang2) {		
 		console.log("error: voice to set (" + myVoice.name + " is not of the selected language (" +  voice_lang2 + " vs " + selected_voiceLang2); 
 		console.log("lastNumVoice=" + lastNumVoice  + " listVox.length=" + listVox.length); 
+		console.log("myVoice = listVox[lastNumVoice][0] = " + listVox[lastNumVoice][0] + 
+			" listVox[lastNumVoice][1]: lang=" + listVox[lastNumVoice][1].lang + " name=" + listVox[lastNumVoice][1].name); 
+		console.log("selected_voiceLangRegion=" + selected_voiceLangRegion + " selected_voice_name=" + selected_voice_name); 	
+			
 		//console.log(signalerror); 
 		tts_2_fill_the_voices(); 
 		if (lastNumVoice >= listVox.length) lastNumVoice = 0;  

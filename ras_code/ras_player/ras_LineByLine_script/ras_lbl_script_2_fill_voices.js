@@ -36,7 +36,7 @@ function tts_2_fill_the_voices() {
 	
 	selected_voice_ix = -1;
 	
-	let selected_voiceLang2 = selected_langRegion.substr(0,2); 	
+	
 	var swNotFound = true;
 	for(var ix=0; ix < numTotVoices; ix++) {
 		if (selected_voice_name == voices[ix].name) {
@@ -83,10 +83,10 @@ function tts_2_fill_the_voices() {
 		return;		
 	}
 	if (selected_voice_ix < numTotVoices) { 
-		vox = voices[selected_voice_ix];
-		selected_langRegion = vox.lang; 
-		selected_voiceLang2 = selected_langRegion.substr(0,2); 	
+		vox = voices[selected_voice_ix];			
 		selected_voice_name = vox.name; 
+		selected_langRegion = vox.lang; 
+		selected_voiceLang2 = selected_langRegion.substr(0,2); 
 		listVox.push( [vox.lang , vox] );  
 	}
 	//------------------------------------------

@@ -53,8 +53,8 @@ function onclick_tts_get_oneLangVoice(this1) {
 	
 	document.getElementById("id_laName").innerHTML  =  langname ;
 	document.getElementById("id_laName2").innerHTML =  langname ;
-	document.getElementById("m016-1").innerHTML  =  document.getElementById("m016").innerHTML.replace("§1§", langname);
-	document.getElementById("m138-1").innerHTML  =  document.getElementById("m138").innerHTML.replace("§1§", langname);
+	document.getElementById("m466-1").innerHTML  =  document.getElementById("m466").innerHTML.replace("§1§", langname);
+	document.getElementById("m438-1").innerHTML  =  document.getElementById("m438").innerHTML.replace("§1§", langname);
 	
 	myVoice = voices[ix].lang + " " + voices[ix].name;  
 	document.getElementById("id_myLang").innerHTML = myVoice;  
@@ -184,10 +184,12 @@ function onclick_tts_playSynthVoice_row2(this1, ixTD123, swPause,swNewVoice) {
 		} else {
 			lastNumVoice = 0; 
 		}		
-	    //console.log("2 onclick_tts_playSynthVoice_row2() lastNumVoice=" + lastNumVoice);  
+	    /**
+		//console.log("2 onclick_tts_playSynthVoice_row2() lastNumVoice=" + lastNumVoice);  
 		console.log("lastNumVoice=" + lastNumVoice); 
 		console.log("listVox.length=" + listVox.length); 
 		console.log("voice_toUpdate_speech =" + voice_toUpdate_speech ); 
+		**/
 	    voice_toUpdate_speech = listVox[lastNumVoice][1]  ;  
 		 
 		 var td1 = this1.parentElement;
@@ -360,7 +362,7 @@ function onclick_tts_playSynthVoice_m1_row2(this1, ixTD, swPause,swNewVoice) {
 
 //------------------------------------------
 
-function onclick_tts_playSynthVoice_m1_row3(this1, ixTD, swPause,swNewVoice) {
+function onclick_tts_playSynthVoice_m1_row3(this1,idRow, ixTD, swPause,swNewVoice) {
 	var begix, endix; 
 	
 	var td1 = this1.parentElement;
@@ -432,7 +434,7 @@ function onclick_tts_playSynthVoice_m1_row3(this1, ixTD, swPause,swNewVoice) {
 
 //--------------------------------
 
-function onclick_tts_playSynthVoice_word3(this1, ixTD123, swPause,swNewVoice) {
+function onclick_tts_playSynthVoice_word3(this1, idRow, ixTD123, swPause,swNewVoice) {
 
 	if (tts_3_play_or_cancel(this1) < 0) {
 		return;
@@ -444,7 +446,9 @@ function onclick_tts_playSynthVoice_word3(this1, ixTD123, swPause,swNewVoice) {
 	} else {
 		lastNumVoice = 0; 
 	}	
-
+	
+	
+	
 	var td1 = this1.parentElement;
 	var tr1 = td1.parentElement;
 
@@ -457,6 +461,8 @@ function onclick_tts_playSynthVoice_word3(this1, ixTD123, swPause,swNewVoice) {
 	var pre_idtr1 = pre_idtr.substr(0,1); 
 	
 	if (pre_idtr1 != "w") pre_idtr1 = "";
+	
+	fun_show_numWord( idRow, ixTD123); 
 	
 	var ele_txt = document.getElementById(pre_idtr1 + "idc_"+ numId); 
 	
@@ -482,69 +488,6 @@ function onclick_tts_playSynthVoice_word3(this1, ixTD123, swPause,swNewVoice) {
  } // end of onclick_tts_playSynthVoice_word3
  
 //-------------------------------------------------
-//-------------------------------------------------
-function TOGLIonclick_tts_playSynthVoice_word3(this1, ixTD, swPause,swNewVoice) {
-
-	if (tts_3_play_or_cancel(this1) < 0) {
-		return;
-	}	
-
-	var ixVoice = ixTD - 1;
-	var thisVoice;
-
-	var td1 = this1.parentElement;
-	var tr1 = td1.parentElement;
-
-	var txt1 = "",
-	txt2 = "";
-
-	var id_tr0 = tr1.id.split("_");
-	var numId = parseInt(id_tr0[1]); 	
-	var pre_idtr= id_tr0[0]; 
-	var pre_idtr1 = pre_idtr.substr(0,1); 
-	
-	if (pre_idtr1 != "w") pre_idtr1 = "";
-	
-	var ele_txt = document.getElementById(pre_idtr1 + "idc_"+ numId); 
-	
-	if (ele_txt == null) return;
-	
-	var ele_tts = document.getElementById(pre_idtr1 + "idtts_" + numId);
-	/**
-	console.log("tr ==>" + tr1.innerHTML);   
-	console.log("word ele_txt id ==>" 	+ 	pre_idtr1 + "idc_"+ numId)
-	console.log("word ele_tts id ==>" 	+ 	pre_idtr1 + "idtts" + numId);
-	**/
-
-	txt1 = ele_txt.innerHTML; // cell[ index 5] = text 	; 
-	txt2 = ele_tts.innerHTML; // text to speak
-
-
-	//tts_3_boldCell(tr1, this1, ixVoice, "onclick_tts_playSynthVoice_row");
-
-
-	var txt3;
-	if (txt2 == "") txt3 = txt1;
-	else txt3 = txt2;
-
-	if (swPause) {	
-		txt3 = tts_3_breakTextToPause(txt3, pre_idtr1 ); 
-	}
-	if (swNewVoice) {
-		lastNumVoice++; 
-		if (lastNumVoice >= totNumMyLangVoices) 
-			lastNumVoice = 0; // to change voice on each cycle
-	} else {
-		lastNumVoice = 0; 
-	}
-	//console.log("\nonclick_tts_playSynthVoice_row()  ixTD=" + ixTD + " ixVoice=" + ( ixTD - 1)+ " swNewVoice="+ swNewVoice + "  lastNumVoice=" + lastNumVoice);
-
-	onclick_tts_text_to_speech2(txt3, 8);
-		 
- } // end of onclick_tts_playSynthVoice_row
- 
-//-------------------------------------------------
-
 
 function onclick_tts_text_to_speech2(txt1, wh) {	
 	
@@ -712,7 +655,7 @@ function onclick_tts_seeWords(this1, numId) {
 		last_ele_analWords_id = "";
 	}	
 	
-	ele_wordset.innerHTML  = tts_3_spezzaRiga3(anal_txt, anal_tts_txt);   
+	ele_wordset.innerHTML  = tts_3_spezzaRiga3(numId, anal_txt, anal_tts_txt);   
 	
 	var prevTR  = document.getElementById( "idtr_" + (numId-4) ); 
 	if (prevTR) fun_scroll_tr_toTop( prevTR ); 	// scroll 
@@ -724,10 +667,14 @@ function onclick_tts_seeWords(this1, numId) {
 } //  end of onclick_tts_seeWords()
 	
 //-------------------------------------
-
+function fun_show_numWord(numRow, w1) { 	
+	ele_show_numRow.innerHTML  = msg_rowNum.replace("§r1§",numRow); 	
+	ele_show_numWord.innerHTML = msg_wordNum.replace("§w1§",(1+w1) );  
+	ele_show_numWord.style.visibility = "visible";	
+} // end of fun_show_numWord()
 //-------------------------
 function onclick_tts_text_to_speech_ix(id_pref, ixWord, swLoop, this1) {
-	
+		
 	var ele1 = document.getElementById(id_pref + ixWord);
 	var txt1; 
 	if (ele1) { 
@@ -738,6 +685,10 @@ function onclick_tts_text_to_speech_ix(id_pref, ixWord, swLoop, this1) {
 	var tts_txt1 = txt1; 
 	//  id="widc_4">coeli</div> <div style="display:none;" id="widtts_4">celi</div>
 	
+	var idtr1  = idtr.split("_"); 
+	var idrow = idtr1[1];
+	
+	fun_show_numWord(idrow, ixWord); 
 	
 	
 	if (id_pref=="widc_") {

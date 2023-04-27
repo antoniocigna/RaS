@@ -95,7 +95,8 @@ function update_HtmlEle_MsgById(parm_pgm_ABCH, id_language) {
 	}
 	try{
 		if (testDefault) id_language = "xx";  
-	} catch(e1) {		
+	} catch(e1) {	
+		console.log("testDefault doesn't exist"); 
 	}
 	console.log("id_language=" + id_language); 
 

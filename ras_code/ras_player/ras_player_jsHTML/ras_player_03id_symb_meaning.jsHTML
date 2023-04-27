@@ -54,7 +54,7 @@ let buttonSymbol = `
                                     </tr>
                                     <tr>
                                        <td><span style="font-size:2em;width:auto;height:1.4em;">←</span></td>
-                                       <td id="Xm120">premi per stabilire la fine della selezione delle righe </td>
+                                       <td id="m120">premi per stabilire la fine della selezione delle righe </td>
                                     </tr>
                                     <tr>
                                        <td><span style="font-size:2em;width:auto;height:1.4em;">🗣</span></td>

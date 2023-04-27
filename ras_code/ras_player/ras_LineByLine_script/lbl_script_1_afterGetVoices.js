@@ -120,7 +120,7 @@ console.log("LOADED file SCRIPT " + currScript.substring( 1+Math.max(bar1,bar2) 
           sw_inp_sub_orig_builder = true;
       } else {
           sw_inp_sub_orig_builder = false;
-          msgerr1 += "<br>" + tts_1_getMsgId("m132"); //  ma22 the source language subtitle file  has not been read or is empty" ;         
+          msgerr1 += "<br>" + tts_1_getMsgId("m432"); //  ma22 the source language subtitle file  has not been read or is empty" ;         
       }
 	  inp_row_orig = builder_orig_subtitles_string.split("\n") ;
 	  inp_row_orig.push("");    
@@ -147,9 +147,9 @@ console.log("LOADED file SCRIPT " + currScript.substring( 1+Math.max(bar1,bar2) 
           sw_inp_sub_tran_builder = false;
           if (sw_translation_not_wanted == false) {
 			console.log("anto1   msgerrOrig=" + msgerrOrig)
-              msgerr1 += "<br>" + tts_1_getMsgId("m133"); //    translated subfile missing     					
+              msgerr1 += "<br>" + tts_1_getMsgId("m433"); //    translated subfile missing     					
               if (msgerrOrig == "") { // only if original srt is Ok  
-                  msgerr1 += "<br>" + tts_1_getMsgId("m134").replace("§...§", TRANSLATION_NOT_WANTED); // if there is no translation
+                  msgerr1 += "<br>" + tts_1_getMsgId("m434").replace("§...§", TRANSLATION_NOT_WANTED); // if there is no translation
 			  }
           }
       }
@@ -262,8 +262,8 @@ function tts_1_get_languagePlayer(ix) {
 		}  
 	}
 	selected_voice_language = voice2 + "," + nn + "," + ix; 
-	var lan1 = document.getElementById("m002").innerHTML ;
-	var lan2 = document.getElementById("m003").innerHTML
+	var lan1 = document.getElementById("m452").innerHTML ;
+	var lan2 = document.getElementById("m453").innerHTML
 	document.getElementById("id_lang2").innerHTML = "  (" + lan1 + " " + voice2 + ", " + nn + " " + lan2 + ")" ;
 	
 	//console.log("tts_1_get_languagePlayer(ix) " + " voices.length=" + voices.length + 

@@ -37,17 +37,17 @@ let table_prototype2= `
                               </td>
                               <td class="c_m1"></td>
                               <td class="playBut1 c_m1">
-                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_m1_row3(this,§w1§,false,false)">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_m1_row3(this,§nrow§,§w1§,false,false)">
                                  <span style="font-size:2em;height:1.4em;">🗣</span>
                                  </button>
                               </td>
                               <td class="playBut1 c_m1">
-                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_m1_row3(this,§w1§,false,true)">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_m1_row3(this,§nrow§,§w1§,false,true)">
                                  <span style="font-size:2em;height:1.4em;">🗣</span><span style="font-size:0.9em;">+</span>
                                  </button>
                               </td>
                               <td class="playBut1 c_m1">
-                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_m1_row3(this,§w1§,true,false)">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_m1_row3(this,§nrow§,§w1§,true,false)">
                                  <span style="font-size:2em;height:1.4em;">🗣</span><span style="font-size:0.9em;">𝄐</span>
                                  </button>
                               </td>
@@ -78,17 +78,17 @@ let table_prototype2= `
                                  <div style="display:none;" id="widtts_§w1§">§wordTTS§</div>
                               </td>
                               <td class="playBut1 c_m0">
-                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_word3(this,§w1§,false,false)">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_word3(this,§nrow§,§w1§,false,false)">
                                  <span style="font-size:2em;height:1.4em;">🗣</span>
                                  </button>
                               </td>
                               <td class="playBut1 c_m0">
-                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_word3(this,§w1§,false,true)">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_word3(this,§nrow§,§w1§,false,true)">
                                  <span style="font-size:2em;height:1.4em;">🗣</span><span style="font-size:0.9em;">+</span>
                                  </button>
                               </td>
                               <td class="playBut1 c_m0">
-                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_word3(this,§w1§,true,false)">
+                                 <button class="buttonWhite" onclick="onclick_tts_playSynthVoice_word3(this,§nrow§,§w1§,true,false)">
                                  <span style="font-size:2em;height:1.4em;">🗣</span><span style="font-size:0.9em;">𝄐</span>
                                  </button>
                               </td>
@@ -101,9 +101,9 @@ let table_prototype2= `
 	document.getElementById("id_prototype2").innerHTML = table_prototype2; 	
 	
 	//----------------------------------------------------------
-	function fillInProto2( list_wordsOrig, list_wordsTTS) {
+	function fillInProto2( id_row, list_wordsOrig, list_wordsTTS) {
 		let wrk_proto1 = document.getElementById("id_prototype2").innerHTML; 
-		console.log("fillin  wrk_proto1 = " + wrk_proto1); 
+		
 		let j1 = wrk_proto1.indexOf("<tr"); 
 		let j2 = wrk_proto1.lastIndexOf("</tr>"); 	
 		let protoFirst = wrk_proto1.substring(0,j1).trim(); 
@@ -116,7 +116,8 @@ let table_prototype2= `
 		for(let p1=0; p1 < list_wordsOrig.length; p1++) {
 			word0Orig =  list_wordsOrig[p1]; 
 			word0TTS  =  list_wordsTTS[p1]; 
-			newProtoTR += protoTR.replaceAll("§w1§",p1).replaceAll("§wordOrig§",word0Orig).replaceAll("§wordTTS§",word0TTS);
+			newProtoTR += protoTR.replaceAll("§nrow§",id_row).replaceAll("§w1§",p1).
+					replaceAll("§wordOrig§",word0Orig).replaceAll("§wordTTS§",word0TTS);
 		}
 		return protoFirst + newProtoTR + protoLast; 
 	}

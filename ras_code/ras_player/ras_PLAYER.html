@@ -213,10 +213,10 @@
 						
                      <div id="id_sub_div" style="display:none; text-align:left;border:2px solid green;padding:1em;margin-bottom:1em;">
                         <input type="radio" id="id_forceSubOpen" name="forceSub" checked="" onclick="onclick_OneClipRow_showHide_AllSub(true)">
-                        <label for="id_forceSubOpen">📖 <span class="msg" id="m115">show all subtitles</span></label>
+                        <label for="id_forceSubOpen">📖 <span class="msg" id="m415">show all subtitles</span></label>
                         <br>
                         <input type="radio" id="id_forceSubClose" name="forceSub" onclick="onclick_OneClipRow_showHide_AllSub(false)">								
-                        <label for="id_forceSubClose">📕 <span class="msg" id="m116">hide all subtitles</span></label>
+                        <label for="id_forceSubClose">📕 <span class="msg" id="m416">hide all subtitles</span></label>
                      </div>
 					
                      <div id="id_bottom_right" style="width:98%;border:0px solid green;">
@@ -226,13 +226,7 @@
                               <col span="2" class="h_backcolor2"  style="width:33%;">
                            </colgroup>
                            <tr>
-                              <td id="id_subOnLeftVideo" >
-								<!--
-                                 <button class="h_buttonWhite" style="color::black; text-decoration: none;width:100%;" 
-                                    onclick='onclickOnOff("id_sub_div", "block")'>
-                                 <span class="msg" id="m111">Subtitles</span>
-                                 </button>
-								 -->
+                              <td id="id_subOnLeftVideo" >								
                               </td>
                               <td>
                                  <button class="h_buttonWhite"  id="id_chg_color" style="color:black; text-decoration: none;width:100%;"
@@ -364,44 +358,7 @@
                            </div>
                         </div>
                      </div>
-                     <div id="id_statist" style="display:none; font-style: italic;margin:auto; text-align:center;background-color:lightgrey; color: black;padding:1em;">
-                        <table style="margin:auto; text-align:center;border:1px solid black;">
-                           <caption><b><span class="msg" id="m010">how much are you working with this file</span></b></caption>
-                           <tbody>
-                              <tr>
-                                 <th class="msg" id="m011">Session<br>&nbsp;</th>
-                                 <th class="msg" id="m012">num.<br>days</th>
-                                 <th class="msg" id="m013">num.<br>sessions</th>
-                                 <th class="msg" id="m014">num.<br>clips</th>
-                                 <th class="msg" id="m015">time<br>usage</th>
-                                 <th class="msg" id="m016">time<br>visual.</th>
-                                 <th class="msg" id="m019">num.<br>sub.lines</th>
-                                 <th class="msg" id="m020">num.<br>words</th>
-                              </tr>
-                              <tr>
-                                 <td><b><span class="msg" id="m017">this session</span></b></td>
-                                 <td></td>
-                                 <td></td>
-                                 <td id="st_1nclip">0</td>
-                                 <td id="st_1elap">0:00:00</td>
-                                 <td id="st_1vidtm">0:00:00</td>
-                                 <td id="st_1lines">0</td>
-                                 <td id="st_1words">0</td>
-                              </tr>
-                              <tr>
-                                 <td><b><span class="msg" id="m018">all sessions</span></b></td>
-                                 <td id="st_2day">4</td>
-                                 <td id="st_2run">258</td>
-                                 <td id="st_2nclip">0</td>
-                                 <td id="st_2elap">0:00:00</td>
-                                 <td id="st_2vidtm">0:00:00</td>
-                                 <td id="st_2lines">0</td>
-                                 <td id="st_2words">0</td>
-                              </tr>
-                           </tbody>
-                        </table>
-                     </div>
-                     <!-- end of statist --> 
+               
                      <div style="border:0px solid violet; ">
                         <div id="id_ctrVideo" class="centerFlex" style="border:0px solid green; 
                            padding:0.5em;margin:0;
@@ -687,27 +644,27 @@
 							  </colgroup>
                               <thead id="id_tabSub_th">
                                  <tr id="id_tr_row_zero" style="background-color:grey; ">
-                                    <th id="m005" class="msg header_1">seleziona inizio</th>
-                                    <th id="m006" class="msg header_1">seleziona fine</th>
-                                    <th id="m007" class="msg header_1">mostra / nascondi<br>testo</th>
-                                    <th id="m008" class="msg header_1">mostra / nascondi<br>traduzione</th>
-                                    <th id="m013" class="msg header_1">parola<br>per<br>parola</th>
-                                    <th id="id_h_textCol" style="text-align:center;  vertical-align:bottom;        color:black;font-weight:bold;">
+                                    <th id="m455" class="msg header_1">seleziona inizio</th>
+                                    <th id="m456" class="msg header_1">seleziona fine</th>
+                                    <th id="m457" class="msg header_1">mostra / nascondi<br>testo</th>
+                                    <th id="m458" class="msg header_1">mostra / nascondi<br>traduzione</th>
+                                    <th id="m463" class="msg header_1">parola<br>per<br>parola</th>
+                                    <th id="id_h_textCol" style="text-align:ceseleziona inizionter;  vertical-align:bottom;        color:black;font-weight:bold;">
                                        <!-- the content of the line below because is used to fix the column width --> 
                                        <div id="id_h_hidden" style="visibility:hidden; font-family:monospace;
                                           width:100%;">
                                           Bonsoir, signori, dame, signore e signori, buona sera, signora e signori.
                                        </div>
                                        <div id="id_h_visible" class="header_1">
-                                          <span id="m121" class="msg header_1 fsize1" style="font-size:2em;">testo</span>
+                                          <span id="m421" class="msg header_1 fsize1" style="font-size:2em;">testo</span>
                                        </div>
                                     </th>
                                     <th id="m225" class="msg header_1 c_playReal">Play una sola volta</th>
-                                    <th id="m226noTTS" class="msg header_1 c_playReal">Play all'infinito</th>
-                                    <th id="m122" class="msg header_1 c_playSynth">Play la voce scelta</th>
-                                    <th id="m123" class="msg header_1 c_playSynth">Play una voce a turno</th>
-                                    <th id="m124" class="msg header_1 c_playSynth">Play pausa tra le parole</th>
-                                    <th id="m125" class="msg header_1 ">N.</th>
+                                    <th id="m226" class="msg header_1 c_playReal">Play all'infinito</th>
+                                    <th id="m422" class="msg header_1 c_playSynth">Play la voce scelta</th>
+                                    <th id="m423" class="msg header_1 c_playSynth">Play una voce a turno</th>
+                                    <th id="m424" class="msg header_1 c_playSynth">Play pausa tra le parole</th>
+                                    <th id="m425" class="msg header_1 ">N.</th>
                                  </tr>
                               </thead>
                               <tbody id="id_tabSub_tbody"> 
@@ -727,7 +684,7 @@
 									display: flex; flex-direction: column; justify-content: space-around; ">
 							
 							<div class="c_playReal" style="padding:0.5em;">
-							  <b>real voice</b>
+							  <b><span id="m472" class="msg">real voice</span></b>
 							  <hr>
 							  <div id="id_butStop" >	
 								 <button id="id_b5b1" class="buttonTD2" style="font-size:1em; text-align:center; font-weight:bold;" 
@@ -738,6 +695,7 @@
 								 <button id="id_bRigthLeft" class="buttonTD2" style="font-size:1em; text-align:center; font-weight:bold;" onclick="onclick_scroll_right(this)"><span style="font-weight:bold; font-size:2em;"> ⟹ </span></button>	
 								 </div>
 							  </div>
+						
 							  <div id="id_slider" style="border:0px solid red; width:10em;">
 								 <div>&nbsp;&nbsp;<b><span class="msg" id="m040" style="font-style: oblique;">Change the Speed</span></b>&nbsp;&nbsp;</div>
 								 <div style="display:flex;width:100%">
@@ -750,8 +708,16 @@
 							  </div>
 							</div>
 							
+							<div style="display: flex; justify-content: center;">
+								<div  style="text-align:center;">
+									<span id="id_show_numRow" ></span>
+									<br>
+									<span id="id_show_numWord"></span> 
+								</div>	
+							</div>
+							  
 							<div id="id_play_synth" class="c_playSynth" style="padding:0.5em;">
-								 <b>Synthetic voices</b> 
+								 <b><span id="m473" class="msg">Synthetic voices</span></b> 
 								 <hr>
 							   <div id="id_voxLangDisplay" style=""><b>Inglese </b><br><small>parlato in</small><br><b> Regno Unito</b><br><small>Google UK English Female</small>
 							   </div>
@@ -765,16 +731,16 @@
 										</td>
 									 </tr>
 									 <tr>
-										<td id="id_905" style="width:2em;"><span id="m127" class="msg">Velocità</span></td>
+										<td id="id_905" style="width:2em;"><span id="m427" class="msg">Velocità</span></td>
 										<td style="width:0.5em;padding:0;">1</td>
 										<td style="width:0.5em;padding:0;">
 										   <input type="range" min="0.0" max="2" value="1" step="0.25" oninput="onclick_tts_changeRate(this)">
 										</td>
 									 </tr>
 							   </table>								  
-							   <button id="id_sp_pause" onclick="onclick_tts_speech_pause()"><span id="m128" class="msg">Pausa</span></button>
-							   <button id="id_sp_resume" onclick="onclick_tts_speech_resume()"><span id="m129" class="msg">Riprendi</span></button>
-							   <button id="id_sp_cancel" onclick="onclick_tts_speech_cancel()"><span id="m130" class="msg">Annulla</span></button>
+							   <button id="id_sp_pause" onclick="onclick_tts_speech_pause()"><span id="m428" class="msg">Pausa</span></button>
+							   <button id="id_sp_resume" onclick="onclick_tts_speech_resume()"><span id="m429" class="msg">Riprendi</span></button>
+							   <button id="id_sp_cancel" onclick="onclick_tts_speech_cancel()"><span id="m430" class="msg">Annulla</span></button>
 							</div>
 							
                      </div>
@@ -1061,44 +1027,48 @@
             <span class="msg" id="m897">Practice<br>by reading <br>a subtitle line at time or a group of them</span>
             <span class="msg" id="m905">rate</span>
             <span class="msg" id="m906">pitch</span>
-            <span class="msg" id="m226">Play all'infinito</span>
          </div>
+		 <div id="id_msg_depot2" style="display:none">  			
+			 <span id="m400">VVm400 To synchronize subtitles with speech   ZVm400></span>
+			 <span id="m401">VVm401 Select a group of subtitle lines ZVm401></span>
+			 <span id="m402">VVm402 Practice<br>by listening and reading a few subtitle lines at time ZVm402></span>
+			 <span id="m403">VVm403 Practice<br>by listening<br>only a few seconds at a time ZVm403></span>
+			 <span id="m404">VVm404 Practice<br>by listening (synthetic voice) and reading  ZVm404></span>
+			 <span id="m405">VVm405 Rate ZVm405></span>   
+			 <span id="m406">VVm406 end time ZVm406></span>
+			 <span id="m407">VVm407 seconds ZVm407></span>
+			 <span id="m408">VVm408 since the <br>second ZVm408></span>
+			 <span id="m409">VVm409 per <br>second ZVm409></span>
+			 <span id="m410">VVm410 text ZVm410></span>
+			 <span id="m411">VVm411 Subtitles ZVm411</span>			
+			 <span id="m412">VVm412 Press the button of the line that ends with the last word spoken ZVm412></span>
+			 <span id="m413">VVm413 subtitle lines ZVm413></span>
+			 <span id="m414">VVm414 subtitle line ZVm414></span>
+			 <span id="m415">VVm415 show all subtitles ZVm415></span>									
+			 <span id="m416">VVm416 hide all subtitles ZVm416></span>  
+			 <span id="m417">VVm417 increased by ZVm418></span>
+			 <span id="m418">VVm418 decreased by ZVm418></span>
+			 <span id="m419">VVm419 Bilingual Text ZVm419></span> 
+			 <span id="m420">spoken in</span>	
+			 <span id="m432">the text in source language is missing</span>	
+			 <span id="m433">the translated text is missing</span>	
+			 <span id="m434">but if that's ok, write 3 dots in a row <b>§...§</b></span>  
+			 <span id="m438">§1§ text</span>
+			 <span id="m464" class="msg"><br>per migliorare <br> la comprensione delle lingue straniere</span><br>
+			 <span id="m465" class="msg">ascoltando un testo <br>letto una riga per volta, una parola per volta</span>
+			 <span id="m466">Paste the <b>§1§</b> text here below</span>
+			 <span id="m470">subtitle §r1§</span>
+			 <span id="m471">word §w1§</span>
+			 <span id="m472">real voice</span>
+			 <span id="m473">Synthetic voices</span> 
+		  </div>
          <!-- end of html_Include_4 -->
       </div>
-	  <!--
-      <div style="border:0px solid blue;margin:0;width:15%;  ">
-         <div>
-            <div id="id_voxLangDisplay" style="margin-top:0.5em;"></div>
-            <table style="font-size:0.5em;width:100;">
-               <tr  style="">
-                  <td id="id_906" style="width:2em;padding-top:3em; padding-bottom:3em;"><span id="m126" class ="msg">Tono</span></td>
-                  <td style="width:0.5em;padding:0;padding-top:3em; padding-bottom:3em;">1</td>
-                  <td style="width:0.5em;padding:0;padding-top:3em; padding-bottom:3em;">
-                     <input type="range" min="0.0" max="2" value="1" step="0.1" oninput="onclick_tts_changePitch(this)">
-                  </td>
-               </tr>
-               <tr  style="padding-top:3em; padding-bottom:3em;">
-                  <td id="id_905" style="width:2em;padding-top:3em; padding-bottom:3em;"><span id="m127" class ="msg">Velocita</span></td>
-                  <td style="width:0.5em;padding:0;padding-top:3em; padding-bottom:3em;">1</td>
-                  <td style="width:0.5em;padding:0;padding-top:3em; padding-bottom:3em;">
-                     <input type="range" min="0.0" max="2" value="1" step="0.25" oninput="onclick_tts_changeRate(this)">
-                  </td>
-               </tr>
-            </table>
-         </div>
-         <div style="height:20%;" > &nbsp; </div>
-         <div>		  
-            <button id="id_sp_pause"  onclick="onclick_tts_speech_pause()"><span id="m128" class ="msg">Pause</span></button>
-            <button id="id_sp_resume" onclick="onclick_tts_speech_resume()"><span id="m129" class ="msg">Resume</span></button>
-            <br><br><br>
-            <button id="id_sp_cancel" onclick="onclick_tts_speech_cancel()"><span id="m130" class ="msg">Cancel</span></button>
-         </div>
-      </div>
-	  -->
+	 
       <div  style="display:none;text-align:center;width:100%;">
       <label for="id_voices">
-      <b><span id="m135" class="f_blue">Seleziona la prima voce che dovra' leggere il testo</span></b>	
-      <br><small><span id="m136">le altre voci nella stessa lingua leggeranno a turno</span></small> 
+      <b><span id="m435" class="f_blue">Seleziona la prima voce che dovra' leggere il testo</span></b>	
+      <br><small><span id="m436">le altre voci nella stessa lingua leggeranno a turno</span></small> 
       </label> 
       <br><br>
       <select id="id_voices" onchange="onclick_tts_get_oneLangVoice(this)">    
@@ -1108,17 +1078,17 @@
          <br>
          <span id="id_lang2"></span>
          <br>
-         <span id="m002">language</span>
-         <span id="m003">voice</span>					  
+         <span id="m452">language</span>
+         <span id="m453">voice</span>					  
       </div>
       <div id="id_ext_language" style="margin-top:0.5em;"></div>
       <br><br><br>
-      <div><button id="id1but1a"  class="button" onclick="onclick_tts_langSelected()"><span id="m137">continua</span></button></div>
+      <div><button id="id1but1a"  class="button" onclick="onclick_tts_langSelected()"><span id="m437">continua</span></button></div>
       
 	  
 	  <div style="display:none;"> 
-         <b><span id="m016-1" class="msg f_blue">Incolla qui sotto il testo in </span></b>
-         <span id="m138-1" class="msg f_blue">testo §1§</span>
+         <b><span id="m466-1" class="msg f_blue">Incolla qui sotto il testo in </span></b>
+         <span id="m438-1" class="msg f_blue">testo §1§</span>
          <b><span id="id_laName" class="f_big" style="display:none;"></span></b>	
          <b><span id="id_laName2" class="f_big" style="display:none;"></span></b>	
       </div>
@@ -1128,6 +1098,12 @@
 		<div id="id_prototype2"  ></div><script src="./ras_player_jsHTML/ras_player_02id_prototype2.jsHTML"></script>	
 	  </div>
 	  
+	  <script>
+         //var testDefault = false;  
+         var testDefault = true; 	 // testDefault = true is used for test purpose only to force defaut language (English) for  header and messages.  
+         //                           // default language is used when there is no message entry (in cbc_message.msg file) for the computer console language 
+             
+      </script>	  
 	  
       <script src="../ras_common/ras_MESSAGES.msg"        ></script>
       <script>
@@ -1135,23 +1111,15 @@
          return txt1; 
          } 
 	  </script>		 
-      <script src="../ras_common/ras_MESSAGE_manager.js"  onload="messageMain('B')"></script> 	  	  
+      <script src="../ras_common/ras_MESSAGE_manager.js"  onload="messageMain('D')"></script> 	  	  
       <script src="./ras_player_js/rascbc_PLAYER_script.jstxt"         ></script> 
-	  <!--
-	  <script src="./rascbc_PLAYER_text_to_speech.jstxt" ></script> 
-	  <script src="./rascbc_PLAYER_break_text.jstxt"     ></script>  
-		-->
+	 
       <script>				
          document.getElementById("gotoHelp0").href = document.getElementById("mh00");
       </script>        
           
     
-      <script>
-         var testDefault = false;  
-         //var testDefault = true; 	 // testDefault = true is used for test purpose only to force defaut language (English) for  header and messages.  
-         //                           // default language is used when there is no message entry (in cbc_message.msg file) for the computer console language 
-             
-      </script>	  
+    
 	  
       <script src="../ras_common/ras_VOICES_getVoices.js"               ></script>
 	  
@@ -1168,8 +1136,7 @@
          let ele_voxDisplay     = document.getElementById("id_voxDisplay"); 
          let ele_voxLangDisplay = document.getElementById("id_voxLangDisplay");  
          	  
-      </script>
-       
+      </script>     
 	  
 	  
 	  <script src="./ras_LineByLine_script/ras_lbl_script_0_1_def.js"         defer  ></script>	   
@@ -1182,58 +1149,7 @@
       <script src="./ras_LineByLine_script/lbl_script_8_TTS_REPLACE.js"    defer  ></script>
       <script src="./ras_LineByLine_script/lbl_script_9_exec.js"           defer  ></script>    	  
 	  
-	  
-	  <!--
-      <script src="./lbl_script_2_fill_voices.js"    defer  ></script>   
-      <script src="./lbl_script_3_text_to_speech.js" defer  ></script>	  
-      <script src="./lbl_script_0_1_def.js"          defer  ></script>	   
-      <script src="./lbl_script_0_2_onclick.js"      defer  ></script>	
-      <script src="./lbl_script_1_afterGetVoices.js" defer  ></script>
-      <script src="./lbl_script_4_breakText.js"      defer  ></script>	 
-      <script src="./lbl_script_5_tts_otherFuns.js"  defer  ></script>	
-      <script src="./lbl_script_8_TTS_REPLACE.js"    defer  ></script>
-      <script src="./lbl_script_9_exec.js"           defer  ></script>   
---> 	  
      
-	  <!--
-      <script src="./js0_4_word_cbc_PLAYER_text_to_speech_word.jstxt"></script>
-      <script src="./ras_js5_cbc_PLAYER_script.jstxt"         ></script> 	  
-      <script src="./js6_cbc_TTS_REPLACE.jstxt" > </script>  
-      <script src="./js9_script_firstexec.jstxt" > </script>
-      <script>				
-         document.getElementById("gotoHelp0").href = document.getElementById("mh00");
-      </script>
-	  -->
-      <div id="id_msg_depot2" style="display:none">  
-         <span id="m014" class="msg"><br>per migliorare <br> la comprensione delle lingue straniere</span><br>
-         <span id="m015" class="msg">ascoltando un testo <br>letto una riga per volta, una parola per volta</span>
-         <span id="m016">Paste the <b>§1§</b> text here below</span>
-         <span id="m100">VVm100 To synchronize subtitles with speech   ZVm100></span>
-         <span id="m101">VVm101 Select a group of subtitle lines ZVm101></span>
-         <span id="m102">VVm102 Practice<br>by listening and reading a few subtitle lines at time ZVm102></span>
-         <span id="m103">VVm103 Practice<br>by listening<br>only a few seconds at a time ZVm103></span>
-         <span id="m104">VVm104 Practice<br>by listening (synthetic voice) and reading  ZVm104></span>
-         <span id="m105">VVm105 Rate ZVm105></span>   
-         <span id="m106">VVm106 end time ZVm106></span>
-         <span id="m107">VVm107 seconds ZVm107></span>
-         <span id="m108">VVm108 since the <br>second ZVm108></span>
-         <span id="m109">VVm109 per <br>second ZVm109></span>
-         <span id="m110">VVm110 text ZVm110></span>
-         <span id="m111">VVm111 Subtitles ZVm111</span>			
-         <span id="m112">VVm112 Press the button of the line that ends with the last word spoken ZVm112></span>
-         <span id="m113">VVm113 subtitle lines ZVm113></span>
-         <span id="m114">VVm114 subtitle line ZVm114></span>
-         <span id="m115">VVm115 show all subtitles ZVm115></span>									
-         <span id="m116">VVm116 hide all subtitles ZVm116></span>  
-         <span id="m117">VVm117 increased by ZVm118></span>
-         <span id="m118">VVm118 decreased by ZVm118></span>
-         <span id="m119">VVm119 Bilingual Text ZVm119></span> 
-         <span id="m120">spoken in</span>	
-         <span id="m132">the text in source language is missing</span>	
-         <span id="m133">the translated text is missing</span>	
-         <span id="m134">but if that's ok, write 3 dots in a row <b>§...§</b></span>  
-         <span id="m138">§1§ text</span>
-      </div>
     
    </body>
 </html>

@@ -1,7 +1,7 @@
 "use strict";
 /*  
-ClipByClip: A tool to practice language comprehension
-Antonio Cigna 2021/2022
+RaS: A tool to practice language comprehension
+Antonio Cigna 2023
 license MIT: you can share and modify the software, but you must include the license file 
 */ 
 /* jshint strict: true */
@@ -27,7 +27,7 @@ var word_separator = ".,.;:?!_+-\[\]\(\)"  + "\t\n\r" ;  // word separator chara
 // The script gets the local language identifier, looks for the corresponding part in this file, if it can&apos;t find it, use the English one.
 // for example: the identifier is fr, since the French part is missing (lang_fr) the English one (lang_en) is used.
 //----
-// The message id has the form <Bm...></Bm...>  
+// The message id has the form <Dm...></Dm...>  
 // where the first character can be one of A, B, C
 //    A  message for  cbc_builder.html file    
 //    B  message for  cbc_player.html file    
@@ -53,7 +53,7 @@ var word_separator = ".,.;:?!_+-\[\]\(\)"  + "\t\n\r" ;  // word separator chara
 // se non la trova, utilizza quella in inglese.
 // per esempio: l&apos;identificativo è fr, poiché manca la parte francese (lang_fr) viene utilizzata quella inglese (lang_en).
 //----
-// L&apos;id del messaggio ha la forma <Bm...></Bm...>
+// L&apos;id del messaggio ha la forma <Dm...></Dm...>
 // dove il primo carattere può essere A, B, o C
 // 		A messaggio per il file cbc_builder.html
 //      B messaggio per il file cbc_player.html
@@ -133,187 +133,7 @@ function get_messages() {
 		<Amb65>is not a text file</Amb65>		
 		<Amb67> select the subtitles files and then <br>click here below<br> to download the two files</Amb67>		
 		<Amb68> select the subtitles files and then <br>click here below<br> to download the two files</Amb68>	
-		
-		<Bmh00>../DOC/doc_English/doc_en.html</Bmh00>	
-		<Bfile>cbc_player.html</Bfile>
-		<Bm001>ERROR</Bm001>									
-		<Bm002>This html file has no parameters to use.</Bm002>		
-		<Bm003>It appears to have been started by clicking on it or typing its name on the command line,									
-				<br>but he can&apos;t go alone (he lacks the data to use).									
-		</Bm003>									
-		<Bm004>Must be called from a file created by <b>ClickByClip_builder.html</b>.</Bm004>									
-		<Bm010>how much are you working with this file</Bm010>									
-		<Bm011>Session<br>&nbsp;</Bm011>									
-		<Bm012>num.<br>days</Bm012>									
-		<Bm013>num.<br>sessions</Bm013>									
-		<Bm014>num.<br>clips</Bm014>									
-		<Bm015>time<br>usage</Bm015>									
-		<Bm016>time<br>visual.</Bm016>									
-		<Bm017>this session</Bm017>									
-		<Bm018>all sessions</Bm018>									
-		<Bm019>num.<br>sub.lines</Bm019>									
-		<Bm020>num.<br>words</Bm020>									
-		<Bm021>the dialogue ends with</Bm021>									
-		<Bm022>seconds and sentence completion</Bm022>									
-		<Bm023>seconds and to the end of any overlapping entries</Bm023>									
-		<Bm024>Play the entire clip</Bm024>								
-		<Bm026>Translation of the line being played</Bm026>									
-		<Bm033>Hide the clip&apos;s subtitles</Bm033>									
-		<Bm034>Play the entire clip</Bm034>									
-		<Bm035>Show all subtitles</Bm035>									
-		<Bm036>Hide all subtitles</Bm036>									
-		<Bm037>show</Bm037>									
-		<Bm038>hide</Bm038>									
-		<Bm039>translation of the last line</Bm039>	
-		<Bm040>Change the speed</Bm040>									
-		<Bm100>Specify clip type and duration</Bm100>									
-		<Bm101>Change the duration of the clips</Bm101>									
-		<Bm103>seconds</Bm103>									
-		<Bm104>seconds and dialogue completion</Bm104>									
-		<Bm105>seconds and line completion</Bm105>									
-		<Bm106>lines of subtitles</Bm106>									
-		<Bm107>Play</Bm107>									
-		<Bm108>a new Clip</Bm108>									
-		<Bm109>Change<br>type and duration</Bm109>									
-		<Bm110>Synchronization</Bm110>									
-		<Bm111>Subtitles</Bm111>									
-		<Bm112>Change<br>duration</Bm112>									
-		<Bm113>Reset</Bm113>									
-		<Bm114>Pause<br>Continue</Bm114>									
-		<Bm115>show all subtitles</Bm115>									
-		<Bm116>hide all subtitles</Bm116>										
-		<Bm218>Meaning of the buttons</Bm218>									
-		<Bm119>press to establish start of row selection</Bm119>									
-		<Bm120>press to establish end of row selection</Bm120>									
-		<Bm121>press to play</Bm121>									
-		<Bm122>press to play and then repeat indefinitely</Bm122>			
-		<Bm126>Duration of a Clip</Bm126>									
-		<Bm501>DOC/shared/cbc_4_HELP.html?language=en</Bm501>						
-		<Bm145>reset</Bm145>									
-		<Bm146>restores the initial text and background colors</Bm146>									
-		<Bm147>choose the background color</Bm147>									
-		<Bm148>choose text color</Bm148>									
-		<Bm149>automatic search for the text color that best matches the background</Bm149>									
-		<Bm167>the line is visible, press to hide it</Bm167>									
-		<Bm168>the row is invisible, press to make it visible </Bm168>									
-		<Bm169>the translation is hidden, press to make it visible</Bm169>									
-		<Bm170>the translation is visible, press to hide it </Bm170>									
-		<Bm171>Fix line start or end time</Bm171>									
-		<Bm201>Colors</Bm201>									
-		<Bm202>Change Colors</Bm202>									
-		<Bm204>Background</Bm204>									
-		<Bm205>Text</Bm205>									
-		<Bm206>Text</Bm206>									
-		<Bm207>automatic</Bm207>									
-		<Bm208><br>The <b>Contrast</b>between the background and text colors is</Bm208>									
-		<Bm209>good</Bm209>									
-		<Bm210>insufficient</Bm210>		
-		<Bm211>change the color of the background or text<br>or press the <b>auto.</b>key									
-			<br>to automatically search for the most suitable text color									
-		</Bm211>									
-		<Bm212>I&apos;m looking for the best color</Bm212>									
-		<Bm213>Statistics</Bm213>		
-		<Bm220>select start</Bm220>
-		<Bm221>select end</Bm221>
-		<Bm222>show / hide<br>subtitles</Bm222>
-		<Bm223>show / hide<br>translation</Bm223>
-		<Bm224>Subtitles</Bm224>
-		<Bm225>Play once</Bm225>
-		<Bm226>Play endlessly</Bm226>
-		<Bm227>N.</Bm227>
-		<Bm228>from</Bm228>
-		<Bm229>to</Bm229>
-		<Bm230>maximum number of <br>seconds of sliding<br></Bm230>
-		<Bm231>slide the cursor left or right<br>to bring forward <br>or delay<br>the beginning of the line</Bm231>
-		<Bm232>slide the cursor left or right<br>to bring forward <br>or delay <br>the end of the line</Bm232>		
-		<Bm244><b>To synchronize subtitles with speech</b></Bm244>	
-		<Bm245><ul><li>Select a group of subtitle lines (keys <b>&#8594; &nbsp; &#8592;</b>),
-			</li><li>make sure the subtitles are visible (open book &#128214;)
-			</li><li>click the talking head icon &#128483; to start playback.
-			</li><li>as soon as any line of subtitles has been fully spoken press the <b>Stop</b> key
-			</li><li>If it is difficult to stop playback at the exact point, decrease the speed (vertical slider to the right) and try again.
-			</li><li>After the stop, a box will open where you will have to indicate this last talked line.
-			</li><li>At this point the correction will have been made and
-			it will remain active in subsequent sessions (even after restarting the computer).
-			</li><li>To close this window press the <b>Sync.OK</b> button. </li></ul>
-		</Bm245>
-		<Bm300>Words</Bm300>	
-		<Bm302>Printable Bilingual</Bm302>		
-		<Bm303>Printable Text</Bm303>	
-		<Bm324>Text Lines</Bm324> 	
-		<Bm711>Text Lines</Bm711>
-		<Bm715>show all lines</Bm715>
-		<Bm716>hide all lines</Bm716>
-		<Bm717>list all lines</Bm717>		
-		<Bm731>go to beginning of lines in original language</Bm731>
-		<Bm732>go to beginning of translated lines</Bm732>
-		<Bm782>Show the <b>Subtitles</b>of the line being played</Bm782>									
-		<Bm783>Show the <b>Translation</b>of the line being played</Bm783>			
-		<Bm791>Original text</Bm791>
-		<Bm792>Translated text</Bm792>							
-		<Bm846>Skip</Bm846>					
-		<Bm893>The translated line should only serve to get an idea of the meaning.<br>
-			<b>Line-by-line translation is generally unreliable.</b>
-		</Bm893>
-		<Bm894>Click on <b>t?</b> button to read the subtitles	</Bm894>	
-		<Bm895>Practice<br>by listening and reading<br>only a few subtitle lines at time</Bm895>
-		<Bm896>Practice<br>by listening<br>only a few seconds at a time</Bm896>
-		<Bm897>Practice<br>by listening (synthetic voice) and reading <br>only a few text lines at time</Bm897>
-		<Bm900>Wait a moment, please<br></Bm900> 
-		<Bma06>Confirm</Bma06>									
-		<Bma10>Press to download</Bma10>									
-		<Bma12>title</Bma12>			
-		<Bma17><b>This is the subtitle area</b>,<br>you can move it by dragging the anchor									
-			<br>(click on the anchor and hold down and move the mouse)									
-			<br>You can change the size of this strip<br>by dragging the blue square .									
-		</Bma17>									
-		<Bma18>You need to move the downloaded file from the download folder to the <b>ClipByClip/PLAYER</b></Bma18>									
-		<Bma20>title is missing</Bma20>									
-		<Bma21>the original subtitle file has not been read yet or is empty</Bma21>									
-		<Bma24>error1 in previous step: Aspectless format line in extract_time(</Bma24>									
-		<Bma25>error2 in previous step: Aspectless format line in extract_time(</Bma25>									
-		<Bma26>error3 in extract_time()</Bma26>									
-		<Bma30>seconds without dialogue</Bma30>									
-		<Bma50>Select one or more files.</Bma50>									
-		<Bma52>cannot be played</Bma52>									
-		<Bma80>Show</Bma80>									
-		<Bma81>Hide</Bma81>									
-		<Bmb07>or </Bmb07>									
-		<Bmb10>The video or audio files to be played must be located in the <b>ClipByClip/VideoAudio</b></Bmb10>									
-		<Bmb12>VIDEO or Audio file</Bmb12>									
-		<Bmb13>Select another Video or Audio file in the <b>ClipByClip/VideoAudio</b></Bmb13>									
-		<Bmb22>to improve listening and reading comprehension of a foreign language</Bmb22>									
-		<Bmb23>to improve listening and reading comprehension of a foreign language</Bmb23>									
-		<Bmb50>Error<br>the file is neither video nor audio</Bmb50>		
-		<Bmb52>can&apos;t be played</Bmb52>								
-		<Bmb62>the file to run</Bmb62>									
-		<Bmb64>is not text</Bmb64>									
-		<Bmb65>is not a text file</Bmb65>									
-		<Bmb67>Specify the subtitle files to use and then <br>click below<br>to download the two files</Bmb67>									
-		<Bmb68>Specify the subtitle files to use and then <br>click below<br>to download the two files</Bmb68>									
-		<Bmb71>encoded in the video file</Bmb71>									
-		<Bmb74><b>The folder name and path must be the same as those containing the file </b></Bmb74>									
-		<Bmb77>has been downloaded to your download folder</Bmb77>									
-		<Bmb78>To be able to run it, change the final part of the name to <b>.html</b></Bmb78>									
-		<Bmb79>This file can be moved and executed in any folder on your computer</Bmb79>									
-		<Bmb81>the file</Bmb81>									
-		<Bmb83>end time</Bmb83>									
-		<Bmb84>seconds</Bmb84>									
-		<Bmb85>since the <br>second</Bmb85>									
-		<Bmb86>per <br>second</Bmb86>									
-		<Bmb89>text</Bmb89>									
-		<Bmb90>Press the button of the line that ends with the last word spoken</Bmb90>									
-		<Bmb91>subtitle lines</Bmb91>									
-		<Bmc85>subtitle line</Bmc85>									
-		<Bmc86>increased by</Bmc86>									
-		<Bmc87>decreased by</Bmc87>	
-		<Bmc88>Bilingual Text</Bmc88> 	
-		<Bmt01>Text to speech</Bmt01>	
-		<Bmt02>Select Voice</Bmt02>	 
-		<Bmt03>Volume</Bmt03>	
-		<Bmt04>Rate	</Bmt04>		
-		<Bmt05>Pitch</Bmt05>		
-		<Cfile>cbc_Player_Words_ClipByClip.html</Cfile>
+			<Cfile>cbc_Player_Words_ClipByClip.html</Cfile>
 		<Cm001>ERROR</Cm001>
 		<Cm002>This html file has no parameters to use.</Cm002>
 		<Cm003>It appears to have been started by clicking on it or typing its name on the command line,
@@ -353,8 +173,257 @@ function get_messages() {
 		<Cmt02>Select Voice</Cmt02>	 
 		<Cmt03>Volume</Cmt03>	
 		<Cmt04>Rate	</Cmt04>		
-		<Cmt05>Pitch</Cmt05>		
-		<Dm100> </Dm100>	
+		<Cmt05>Pitch</Cmt05>	
+		<Dmh00>../DOC/doc_English/doc_en.html</Dmh00>	
+		<Dfile>ras_PLAYER.html</Dfile>
+		<Dm001>ERROR</Dm001>									
+		<Dm002>This html file has no parameters to use.</Dm002>		
+		<Dm003>It appears to have been started by clicking on it or typing its name on the command line,									
+				<br>but he can&apos;t go alone (he lacks the data to use).									
+		</Dm003>									
+		<Dm004>Must be called from a file created by <b>ClickByClip_builder.html</b>.</Dm004>									
+		<Dm010>how much are you working with this file</Dm010>									
+		<Dm011>Session<br>&nbsp;</Dm011>									
+		<Dm012>num.<br>days</Dm012>									
+		<Dm013>num.<br>sessions</Dm013>									
+		<Dm014>num.<br>clips</Dm014>									
+		<Dm015>time<br>usage</Dm015>									
+		<Dm017>this session</Dm017>									
+		<Dm018>all sessions</Dm018>									
+		<Dm019>num.<br>sub.lines</Dm019>									
+		<Dm020>num.<br>words</Dm020>									
+		<Dm021>the dialogue ends with</Dm021>									
+		<Dm022>seconds and sentence completion</Dm022>									
+		<Dm023>seconds and to the end of any overlapping entries</Dm023>									
+		<Dm024>Play the entire clip</Dm024>								
+		<Dm026>Translation of the line being played</Dm026>									
+		<Dm033>Hide the clip&apos;s subtitles</Dm033>									
+		<Dm034>Play the entire clip</Dm034>									
+		<Dm035>Show all subtitles</Dm035>									
+		<Dm036>Hide all subtitles</Dm036>									
+		<Dm037>show</Dm037>									
+		<Dm038>hide</Dm038>									
+		<Dm039>translation of the last line</Dm039>	
+		<Dm040>Change the speed</Dm040>									
+		<Dm100>Specify clip type and duration</Dm100>									
+		<Dm101>Change the duration of the clips</Dm101>									
+		<Dm103>seconds</Dm103>									
+		<Dm104>seconds and dialogue completion</Dm104>									
+		<Dm105>seconds and line completion</Dm105>									
+		<Dm106>lines of subtitles</Dm106>									
+		<Dm107>Play</Dm107>									
+		<Dm108>a new Clip</Dm108>									
+		<Dm109>Change<br>type and duration</Dm109>									
+		<Dm110>Synchronization</Dm110>									
+		<Dm111>Subtitles</Dm111>									
+		<Dm112>Change<br>duration</Dm112>									
+		<Dm113>Reset</Dm113>									
+		<Dm114>Pause<br>Continue</Dm114>									
+		<Dm115>show all subtitles</Dm115>									
+		<Dm116>hide all subtitles</Dm116>										
+		<Dm218>Meaning of the buttons</Dm218>									
+		<Dm119>press to establish start of row selection</Dm119>									
+		<Dm120>press to establish end of row selection</Dm120>									
+		<Dm121>press to play</Dm121>									
+		<Dm122>press to play and then repeat indefinitely</Dm122>			
+		<Dm126>Duration of a Clip</Dm126>									
+		<Dm501>DOC/shared/cbc_4_HELP.html?language=en</Dm501>						
+		<Dm145>reset</Dm145>									
+		<Dm146>restores the initial text and background colors</Dm146>									
+		<Dm147>choose the background color</Dm147>									
+		<Dm148>choose text color</Dm148>									
+		<Dm149>automatic search for the text color that best matches the background</Dm149>									
+		<Dm167>the line is visible, press to hide it</Dm167>									
+		<Dm168>the row is invisible, press to make it visible </Dm168>									
+		<Dm169>the translation is hidden, press to make it visible</Dm169>									
+		<Dm170>the translation is visible, press to hide it </Dm170>									
+		<Dm171>Fix line start or end time</Dm171>									
+		<Dm201>Colors</Dm201>									
+		<Dm202>Change Colors</Dm202>									
+		<Dm204>Background</Dm204>									
+		<Dm205>Text</Dm205>									
+		<Dm206>Text</Dm206>									
+		<Dm207>automatic</Dm207>									
+		<Dm208><br>The <b>Contrast</b>between the background and text colors is</Dm208>									
+		<Dm209>good</Dm209>									
+		<Dm210>insufficient</Dm210>		
+		<Dm211>change the color of the background or text<br>or press the <b>auto.</b>key									
+			<br>to automatically search for the most suitable text color									
+		</Dm211>									
+		<Dm212>I&apos;m looking for the best color</Dm212>									
+		<Dm213>Statistics</Dm213>		
+		<Dm220>select start</Dm220>
+		<Dm221>select end</Dm221>
+		<Dm222>show / hide<br>subtitles</Dm222>
+		<Dm223>show / hide<br>translation</Dm223>
+		<Dm224>Subtitles</Dm224>
+		<Dm225>Play once</Dm225>
+		<Dm226>Play endlessly</Dm226>
+		<Dm227>N.</Dm227>
+		<Dm228>from</Dm228>
+		<Dm229>to</Dm229>
+		<Dm230>maximum number of <br>seconds of sliding<br></Dm230>
+		<Dm231>slide the cursor left or right<br>to bring forward <br>or delay<br>the beginning of the line</Dm231>
+		<Dm232>slide the cursor left or right<br>to bring forward <br>or delay <br>the end of the line</Dm232>		
+		<Dm244><b>To synchronize subtitles with speech</b></Dm244>	
+		<Dm245><ul><li>Select a group of subtitle lines (keys <b>&#8594; &nbsp; &#8592;</b>),
+			</li><li>make sure the subtitles are visible (open book &#128214;)
+			</li><li>click the talking head icon &#128483; to start playback.
+			</li><li>as soon as any line of subtitles has been fully spoken press the <b>Stop</b> key
+			</li><li>If it is difficult to stop playback at the exact point, decrease the speed (vertical slider to the right) and try again.
+			</li><li>After the stop, a box will open where you will have to indicate this last talked line.
+			</li><li>At this point the correction will have been made and
+			it will remain active in subsequent sessions (even after restarting the computer).
+			</li><li>To close this window press the <b>Sync.OK</b> button. </li></ul>
+		</Dm245>
+		<Dm300>Words</Dm300>	
+		<Dm302>Printable Bilingual</Dm302>		
+		<Dm303>Printable Text</Dm303>	
+		<Dm324>Text Lines</Dm324> 	
+		<Dm400><b>To synchronize subtitles with speech</b></Dm400>
+		<Dm401><ul><li>Select a group of subtitle lines </li></ul></Dm401>
+		<Dm402>Practice<br>by listening and reading<br>only a few subtitle lines at time</Dm402>
+		<Dm403>Practice<br>by listening<br>only a few seconds at a time</Dm403>
+		<Dm404>Practice<br>by listening (synthetic voice) and reading </Dm404>
+		<Dm405>Rate</Dm405> 
+		<Dm406>end time</Dm406>
+		<Dm407>seconds</Dm407>
+		<Dm408>since the <br>second</Dm408>
+		<Dm409>per <br>second</Dm409>
+		<Dm410>text</Dm410>
+		<Dm411>Subtitles</Dm411>			
+		<Dm412>Press the button of the line that ends with the last word spoken</Dm412>
+		<Dm413>subtitle lines</Dm413>
+		<Dm414>subtitle line</Dm414>
+		<Dm415>show all subtitles</Dm415>							
+		<Dm416>hide all subtitles</Dm416>
+		<Dm417>increased by</Dm417>
+		<Dm418>decreased by</Dm418>
+		<Dm419>Bilingual Text</Dm419>	
+		<Dm420>spoken in</Dm420>	
+		<Dm421>text</Dm421>
+		<Dm422>Play the chosen voice</Dm422>                          
+        <Dm423>Play a voice in turn</Dm423>    
+		<Dm424>Play pause between words</Dm424>
+        <Dm425>N.</Dm425>	
+		<Dm426>Pitch</Dm426>
+		<Dm427>Speed</Dm427>
+		<Dm428>Pause</Dm428>
+		<Dm429>Resume</Dm429>
+		<Dm430>Cancel</Dm430>		
+		<Dm431>Go Back</Dm431>  		
+		<Dm432>the text in source language is missing</Dm432>	
+		<Dm433>the translated text is missing</Dm433>	
+		<Dm434>but if that's ok, write 3 dots in a row <b>§...§</b></Dm434>  	
+		<Dm435>Select the first voice to read the text</Dm435>
+		<Dm436>the other voices in the same language will read in turn</Dm436>
+		<Dm437>continue</Dm437>
+		<Dm438>§1§ text</Dm438>
+		<Dm439>specify the maximum line length</Dm439>
+		<Dm440>continue</Dm440>
+		<Dm441>oral comprehension</Dm441>	
+
+		<Dm452>language</Dm452>
+		<Dm453>voice</Dm453>			
+		<Dm454>continue</Dm454>		
+		<Dm455>select start</Dm455>
+		<Dm456>select end</Dm456>
+		<Dm457>show / hide<br>text</Dm457>
+		<Dm458>show / hide<br>translation</Dm458>	
+<Dm461>Select a voice</Dm461>			
+		<Dm463>word<br>by<br>word</Dm463>	
+		<Dm464>A tool to <br>improve foreign language §oralcomprehension§</Dm464>	
+		<Dm465>by listening to a text <br>read one line at time, one word at time
+			<br><br>at each click the row or word is read by the indicated voice
+			<br>even at reduced speed if required
+		</Dm465>	
+		<Dm466>Paste the <b>§1§</b> text here below</Dm466>		
+		<Dm467>Paste the line by line translation here below </Dm467>
+		<Dm468>(if it doesn't exist write 3 dots ...)</Dm468>		
+		<Dm470>subtitle §r1§</Dm470>
+		<Dm471>word §w1§</Dm471>
+		<Dm472>real voice</Dm472>
+		<Dm473>Synthetic voices</Dm473> 
+
+		<Dm711>Text Lines</Dm711>
+		<Dm715>show all lines</Dm715>
+		<Dm716>hide all lines</Dm716>
+		<Dm717>list all lines</Dm717>		
+		<Dm731>go to beginning of lines in original language</Dm731>
+		<Dm732>go to beginning of translated lines</Dm732>
+		<Dm782>Show the <b>Subtitles</b>of the line being played</Dm782>									
+		<Dm783>Show the <b>Translation</b>of the line being played</Dm783>			
+		<Dm791>Original text</Dm791>
+		<Dm792>Translated text</Dm792>							
+		<Dm846>Skip</Dm846>					
+		<Dm893>The translated line should only serve to get an idea of the meaning.<br>
+			<b>Line-by-line translation is generally unreliable.</b>
+		</Dm893>
+		<Dm894>Click on <b>t?</b> button to read the subtitles	</Dm894>	
+		<Dm895>Practice<br>by listening and reading<br>only a few subtitle lines at time</Dm895>
+		<Dm896>Practice<br>by listening<br>only a few seconds at a time</Dm896>
+		<Dm897>Practice<br>by listening (synthetic voice) and reading <br>only a few text lines at time</Dm897>
+		<Dm900>Wait a moment, please<br></Dm900> 
+		<Dma06>Confirm</Dma06>									
+		<Dma10>Press to download</Dma10>									
+		<Dma12>title</Dma12>			
+		<Dma17><b>This is the subtitle area</b>,<br>you can move it by dragging the anchor									
+			<br>(click on the anchor and hold down and move the mouse)									
+			<br>You can change the size of this strip<br>by dragging the blue square .									
+		</Dma17>									
+		<Dma18>You need to move the downloaded file from the download folder to the <b>ClipByClip/PLAYER</b></Dma18>									
+		<Dma20>title is missing</Dma20>									
+		<Dma21>the original subtitle file has not been read yet or is empty</Dma21>									
+		<Dma24>error1 in previous step: Aspectless format line in extract_time(</Dma24>									
+		<Dma25>error2 in previous step: Aspectless format line in extract_time(</Dma25>									
+		<Dma26>error3 in extract_time()</Dma26>									
+		<Dma30>seconds without dialogue</Dma30>									
+		<Dma50>Select one or more files.</Dma50>									
+		<Dma52>cannot be played</Dma52>									
+		<Dma80>Show</Dma80>									
+		<Dma81>Hide</Dma81>									
+		<Dmb07>or </Dmb07>									
+		<Dmb10>The video or audio files to be played must be located in the <b>ClipByClip/VideoAudio</b></Dmb10>									
+		<Dmb12>VIDEO or Audio file</Dmb12>									
+		<Dmb13>Select another Video or Audio file in the <b>ClipByClip/VideoAudio</b></Dmb13>									
+		<Dmb22>to improve listening and reading comprehension of a foreign language</Dmb22>									
+		<Dmb23>to improve listening and reading comprehension of a foreign language</Dmb23>									
+		<Dmb50>Error<br>the file is neither video nor audio</Dmb50>		
+		<Dmb52>can&apos;t be played</Dmb52>								
+		<Dmb62>the file to run</Dmb62>									
+		<Dmb64>is not text</Dmb64>									
+		<Dmb65>is not a text file</Dmb65>									
+		<Dmb67>Specify the subtitle files to use and then <br>click below<br>to download the two files</Dmb67>									
+		<Dmb68>Specify the subtitle files to use and then <br>click below<br>to download the two files</Dmb68>									
+		<Dmb71>encoded in the video file</Dmb71>									
+		<Dmb74><b>The folder name and path must be the same as those containing the file </b></Dmb74>									
+		<Dmb77>has been downloaded to your download folder</Dmb77>									
+		<Dmb78>To be able to run it, change the final part of the name to <b>.html</b></Dmb78>									
+		<Dmb79>This file can be moved and executed in any folder on your computer</Dmb79>									
+		<Dmb81>the file</Dmb81>									
+		<Dmb83>end time</Dmb83>									
+		<Dmb84>seconds</Dmb84>									
+		<Dmb85>since the <br>second</Dmb85>									
+		<Dmb86>per <br>second</Dmb86>									
+		<Dmb89>text</Dmb89>									
+		<Dmb90>Press the button of the line that ends with the last word spoken</Dmb90>									
+		<Dmb91>subtitle lines</Dmb91>									
+		<Dmc85>subtitle line</Dmc85>									
+		<Dmc86>increased by</Dmc86>									
+		<Dmc87>decreased by</Dmc87>	
+		<Dmc88>Bilingual Text</Dmc88> 	
+		<Dmt01>Text to speech</Dmt01>	
+		<Dmt02>Select Voice</Dmt02>	 
+		<Dmt03>Volume</Dmt03>	
+		<Dmt04>Rate	</Dmt04>		
+		<Dmt05>Pitch</Dmt05>		
+	??????????????????????????
+
+
+
+
+????????????????????????	
+	
 		<Hfile>doc/helpxx.html</Hfile>
 		<Hm800><b>ClipByClip</b> is a tool to practice the comprehension of a language.</Hm800>
 		<Hm820>It can be used in active mode by listening, reading and repeating 
@@ -465,187 +534,6 @@ function get_messages() {
 		<Amb67> Specifica i file sottotitoli da utilizzare e quindi <br>clicca qui sotto<br>per scaricare i due file</Amb67>		
 		<Amb68> Specifica i file sottotitoli da utilizzare e quindi <br>clicca qui sotto<br>per scaricare i due file</Amb68>		
 		
-		<Bmh00>../DOC/doc_Italiano/doc_it.html</Bmh00>	
-		<Bfile>cbc_player.html</Bfile>
-		<Bm001>ERRORE</Bm001>
-		<Bm002>Questo file html non ha parametri da usare.</Bm002>
-		<Bm003>Sembra che sia stato avviato facendo clic su di esso o scrivendo il suo nome sul comando di riga,
-			<br>ma non può andare da solo (gli mancano i dati da usare).
-		</Bm003>
-		<Bm004>Deve essere chiamato da un file creato da <b>ClickByClip_builder.html</b>.</Bm004>
-		<Bm010>quanto stai lavorando con questo file</Bm010>
-		<Bm011>Sessione<br>&nbsp;</Bm011>
-		<Bm012>num.<br>giorni</Bm012>
-		<Bm013>num.<br>sessioni</Bm013>
-		<Bm014>num.<br>clips</Bm014>
-		<Bm015>tempo<br>utilizzo</Bm015>
-		<Bm016>tempo<br>visual.</Bm016>
-		<Bm017>questa sessione</Bm017>
-		<Bm018>tutte le sessioni</Bm018>
-		<Bm019>num.<br>righe sott.</Bm019>
-		<Bm020>num.<br>parole</Bm020>
-		<Bm021>il dialogo termina con</Bm021>
-		<Bm022>secondi e completamento della frase</Bm022>
-		<Bm023>secondi e fino alla fine di eventuali sovrapposioni di voci</Bm023>
-		<Bm024>Play tutta la clip</Bm024>
-		<Bm026>Traduzione della riga in riproduzione</Bm026>
-		
-		<Bm033>Nascondi i sottotitoli della clip</Bm033>
-		<Bm034>Play tutta la clip</Bm034>
-		<Bm035>Mostra tutti i sottotitoli</Bm035>
-		<Bm036>Nascondi tutti i sottotitoli</Bm036>
-		<Bm037>mostra</Bm037>
-		<Bm038>nascondi</Bm038>
-		<Bm039>traduzione dell&apos;ultima riga</Bm039>
-		<Bm040>Cambia la velocit&agrave;</Bm040>
-		<Bm100>Specifica tipo e durata delle clip</Bm100>
-		<Bm101>Modifica la durata delle clip</Bm101>
-		<Bm103>secondi</Bm103>
-		<Bm104>secondi e completamento dialogo</Bm104>
-		<Bm105>secondi e completamento della riga</Bm105>
-		<Bm106>righe di sottotitoli</Bm106>
-		<Bm107>Play</Bm107>
-		<Bm108>una nuova Clip</Bm108>
-		<Bm109>Cambia<br>tipo e durata</Bm109>
-		<Bm110>Sincronizzazione</Bm110>
-		<Bm111>Sottotitoli</Bm111>
-		<Bm112>Cambia<br>durata</Bm112>
-		<Bm113>Reset</Bm113>
-		<Bm114>Pausa<br>Continua</Bm114>
-		<Bm115>mostra tutti i sottotitoli</Bm115>
-		<Bm116>nascondi tutti i sottotitoli</Bm116>
-		<Bm218>Significato dei pulsanti</Bm218>
-		<Bm119>premi per stabilire l&apos;inizio delle selezione delle righe</Bm119>
-		<Bm120>premi per stabilire la fine della selezione delle righe</Bm120>
-		<Bm121>premi per riprodurre</Bm121>
-		<Bm122>premi per riprodurre e poi ripetere all&apos;infinito</Bm122>
-		<Bm126>Durata di una Clip</Bm126>
-		<Bm501>DOC/shared/cbc_4_HELP.html?language=it</Bm501>
-		<Bm145>reset</Bm145>
-		<Bm146>ripristina i colori iniziali di testo e sfondo</Bm146>
-		<Bm147>scegli il colore dello sfondo</Bm147>
-		<Bm148>scegli il colore del testo</Bm148>
-		<Bm149>ricerca automatica del colore di testo più adatto allo sfondo</Bm149>
-		<Bm167>la riga è visibile, premi per nasconderla</Bm167>
-		<Bm168>la riga è invisibile, premi per renderla visibile  </Bm168>
-		<Bm169>la traduzione è nascosta, premi per renderla visibile</Bm169>
-		<Bm170>la traduzione è visibile, premi per nasconderla  </Bm170>
-		<Bm171>correzione del tempo di inizio o fine della riga</Bm171>
-		<Bm201>Colori</Bm201>
-		<Bm202>Cambia i Colori</Bm202>
-		<Bm204>Sfondo</Bm204>
-		<Bm205>Testo</Bm205>
-		<Bm206>Testo</Bm206>
-		<Bm207>autom.</Bm207>
-		<Bm208><br>Il <b>Contrasto</b>tra i colori dello sfondo e del testo è</Bm208>
-		<Bm209>buono</Bm209>
-		<Bm210>insufficiente</Bm210>
-		<Bm211>cambia il colore dello sfondo o del testo<br>oppure premi il tasto <b>autom.</b>
-		<br>per cercare automaticamente il colore di testo più adatto
-		</Bm211>
-		<Bm212>sto cercando il colore migliore</Bm212>
-		<Bm213>Statistiche</Bm213>		
-		<Bm220>selez. inizio</Bm220>  
-		<Bm221>selez. fine</Bm221>   
-		<Bm222>mostra / nascondi<br>sottotitoli</Bm222> 
-		<Bm223>mostra / nascondi<br>traduzione</Bm223> 
-		<Bm224>Sottotitoli</Bm224>
-		<Bm225>Play una sola volta</Bm225> 
-		<Bm226>Play all&apos;infinito</Bm226>
-		<Bm227>N.</Bm227>
-		<Bm228>da</Bm228>
-		<Bm229>a</Bm229>
-		<Bm230>massimo numero di <br>secondi di spostamento<br></Bm230>
-		<Bm231>far scorrere il cursore a sinistra o a destra<br>per anticipare <br>o posticipare<br>l&apos;inizio della riga</Bm231>
-		<Bm232>far scorrere il cursore a sinistra o a destra<br>per anticipare <br>o posticipare <br>la fine della riga</Bm232>		
-		<Bm244><b>Per sincronizzare i sottotitoli col parlato</b>
-		</Bm244>
-		<Bm245><ul><li>Seleziona un gruppo di righe di sottotitoli (tasti <b>&#8594; &nbsp; &#8592;</b>), 
-		</li><li>assicurati che i sottotitoli siano visibili (libro aperto &#128214;)  
-		</li><li>clicca sull&apos;icona della testa parlante &#128483; per far partire la riproduzione.  	
-		</li><li>appena una qualsiasi riga di sottotitoli è stata completamente pronunciata premi il tasto <b>Stop</b>
-		</li><li>Se è difficile riuscire a fermare la riproduzione al punto esatto, diminuisci la velocità (cursore verticale a destra) e riprova.
-		</li><li>Dopo lo stop si aprirà un riquadro dove dovrai indicare questa riga. 
-		</li><li>A questo punto la correzione sarà stata effettuata e 
-			resterà attiva anche nelle sessioni successive (anche dopo aver fatto ripartire il computer).
-		</li><li>Per chiudere questa finestra premi il tasto <b>Sync.OK</b>. </li></ul>
-		</Bm245>
-		<Bm300>Parole</Bm300>
-		<Bm302>Bilingue Stampabile</Bm302>		
-		<Bm303>Testo Stampabile</Bm303>	
-		<Bm324>Testo</Bm324> 
-		<Bm711>Righe</Bm711>	
-		
-		<Bm715>mostra tutte le righe</Bm715>
-		<Bm716>nascondi tutte le righe</Bm716>
-		<Bm717>lista tutte le righe</Bm717>	
-		<Bm731>vai a inizio delle righe in lingua originale</Bm731>  
-		<Bm732>vai a inizio delle righe tradotte</Bm732>	
-		<Bm782>Mostra i  <b>Sottotitoli</b>della riga in riproduzione</Bm782>
-		<Bm783>Mostra la <b>Traduzione</b>della riga in riproduzione</Bm783>
-		<Bm791>Testo in lingua originale</Bm791>
-		<Bm792>Testo tradotto</Bm792>
-		<Bm846>Salta</Bm846>		
-		<Bm893>La riga tradotta dovrebbe servire <br>solo per avere un'idea del significato.<br>
-			<b>La traduzione riga per riga è generalmente inaffidabile.</b>
-		</Bm893>
-		<Bm894>Clic sul pulsante <b>t?</b> per leggere i sottotitoli</Bm894>			
-		<Bm895>Esercitati<br>ascoltando e leggendo<br>solo poche righe di sottotitoli alla volta</Bm895>
-		<Bm896>Esercitati<br>ascoltando<br>solo pochi secondi alla volta</Bm896>
-		<Bm897>Esercitati<br><small>ascoltando (voce sintetica) e leggendo </small><br>solo poche righe di testo alla volta</Bm897>	
-		<Bm900>Aspetta un momento, per piacere <br></Bm900> 
-		<Bma06>Conferma</Bma06>
-		<Bma10>Premi per scaricare</Bma10>
-		<Bma12>titolo</Bma12>
-		<Bma17><b>Questa è l&apos;area dei sottotitoli</b>,<br>è possibile spostarla trascinando l&apos;ancora 
-		<br>(cliccare sull&apos;ancora e tenendo schiacciato spostare il mouse)
-		<br>E&apos; possibile modificare le dimensione di questa striscia<br>trascinando il quadrato blu .
-		</Bma17>
-		<Bma18>Devi spostare il file scaricato dalla cartella dei download alla cartella <b>ClipByClip/PLAYER</b></Bma18>
-		<Bma20>manca il titolo</Bma20>
-		<Bma21>il file dei sottotitoli originali non è stato ancora letto oppure è vuoto</Bma21>
-		<Bma24>errore1 nel passaggio precedente: riga in formato senza aspetti in extract_time(</Bma24>
-		<Bma25>errore2 nel passaggio precedente: riga in formato senza aspetti in extract_time(</Bma25>
-		<Bma26>errore3 in extract_time()</Bma26>
-		<Bma30>secondi senza dialogo</Bma30>
-		<Bma50>Seleziona uno o più file.</Bma50>
-		<Bma52>non può essere riprodotto</Bma52>
-		<Bma80>Mostra</Bma80>
-		<Bma81>Nascondi</Bma81>
-		<Bmb07>oppure</Bmb07>
-		<Bmb10>I file video o audio da riprodurre devono trovarsi nella cartella <b>ClipByClip/VideoAudio</b></Bmb10>
-		<Bmb12>VIDEO o File audio</Bmb12>
-		<Bmb13>Seleziona un&apos;altro file Video o Audio nella cartella <b>ClipByClip/VideoAudio</b></Bmb13>
-		<Bmb22>per migliorare la comprensione di ascolto e lettura di una lingua straniera</Bmb22>
-		<Bmb23>per migliorare la comprensione di ascolto e lettura di una lingua straniera</Bmb23>
-		<Bmb50>Errore<br>il file non è un video e neppure un audio</Bmb50>
-		<Bmb62>il file da eseguire</Bmb62>
-		<Bmb64>non è un testo</Bmb64>
-		<Bmb65>non è un file di testo</Bmb65>
-		<Bmb67>Specifica i file sottotitoli da utilizzare e quindi <br>clicca qui sotto<br>per scaricare i due file</Bmb67>
-		<Bmb68>Specifica i file sottotitoli da utilizzare e quindi <br>clicca qui sotto<br>per scaricare i due file</Bmb68>
-		<Bmb71>codificati nel file video</Bmb71>
-		<Bmb74><b>Nome e percorso della cartella devono essere gli stessi di quelli che contengono il file </b></Bmb74>
-		<Bmb77>è stato scaricato nella cartella download</Bmb77>
-		<Bmb78>Per poterlo eseguire cambia la parte finale del nome in <b>.html</b></Bmb78>
-		<Bmb79>Questo file può essere spostato ed eseguito in qualunque cartella del computer</Bmb79>
-		<Bmb81>il file</Bmb81>
-		<Bmb83>tempo di fine</Bmb83>
-		<Bmb84>secondi</Bmb84>
-		<Bmb85>dal <br>secondo</Bmb85>
-		<Bmb86>al <br>secondo</Bmb86>
-		<Bmb89>testo</Bmb89>
-		<Bmb90>Premi il pulsante della riga che termina con l&apos;ultima parola pronunciata</Bmb90>
-		<Bmb91>righe di sottotitolo</Bmb91>
-		<Bmc85>riga sottotitolo</Bmc85>
-		<Bmc86>aumentato di</Bmc86>
-		<Bmc87>diminuito di</Bmc87>			
-		<Bmc88>Testo Bilingue</Bmc88>   
-		<Bmt01>Sintesi vocale</Bmt01>
-		<Bmt02>Seleziona la voce</Bmt02>
-		<Bmt03>Volume</Bmt03>
-		<Bmt04>Velocità</Bmt04>
-		<Bmt05>Tono</Bmt05>	
 		<Cfile>cbc_Player_Words_ClipByClip.html</Cfile>
 		<Cm001>ERRORE</Cm001>
 		<Cm002>Questo file html non ha parametri da usare.</Cm002>
@@ -687,6 +575,249 @@ function get_messages() {
 		<Cmt03>Volume</Cmt03>
 		<Cmt04>Velocità</Cmt04>
 		<Cmt05>Tono</Cmt05>
+		<Dmh00>../DOC/doc_Italiano/doc_it.html</Dmh00>	
+		<Dfile>ras_PLAYER.html</Dfile>
+		<Dm001>ERRORE</Dm001>
+		<Dm002>Questo file html non ha parametri da usare.</Dm002>
+		<Dm003>Sembra che sia stato avviato facendo clic su di esso o scrivendo il suo nome sul comando di riga,
+			<br>ma non può andare da solo (gli mancano i dati da usare).
+		</Dm003>
+		<Dm004>Deve essere chiamato da un file creato da <b>ClickByClip_builder.html</b>.</Dm004>
+		<Dm010>quanto stai lavorando con questo file</Dm010>
+		<Dm011>Sessione<br>&nbsp;</Dm011>
+		<Dm012>num.<br>giorni</Dm012>
+		<Dm013>num.<br>sessioni</Dm013>
+		<Dm014>num.<br>clips</Dm014>
+		<Dm015>tempo<br>utilizzo</Dm015>		
+		<Dm017>questa sessione</Dm017>
+		<Dm018>tutte le sessioni</Dm018>
+		<Dm019>num.<br>righe sott.</Dm019>
+		<Dm020>num.<br>parole</Dm020>
+		<Dm021>il dialogo termina con</Dm021>
+		<Dm022>secondi e completamento della frase</Dm022>
+		<Dm023>secondi e fino alla fine di eventuali sovrapposioni di voci</Dm023>
+		<Dm024>Play tutta la clip</Dm024>
+		<Dm026>Traduzione della riga in riproduzione</Dm026>
+		
+		<Dm033>Nascondi i sottotitoli della clip</Dm033>
+		<Dm034>Play tutta la clip</Dm034>
+		<Dm035>Mostra tutti i sottotitoli</Dm035>
+		<Dm036>Nascondi tutti i sottotitoli</Dm036>
+		<Dm037>mostra</Dm037>
+		<Dm038>nascondi</Dm038>
+		<Dm039>traduzione dell&apos;ultima riga</Dm039>
+		<Dm040>Cambia la velocit&agrave;</Dm040>
+		<Dm100>Specifica tipo e durata delle clip</Dm100>
+		<Dm101>Modifica la durata delle clip</Dm101>
+		<Dm103>secondi</Dm103>
+		<Dm104>secondi e completamento dialogo</Dm104>
+		<Dm105>secondi e completamento della riga</Dm105>
+		<Dm106>righe di sottotitoli</Dm106>
+		<Dm107>Play</Dm107>
+		<Dm108>una nuova Clip</Dm108>
+		<Dm109>Cambia<br>tipo e durata</Dm109>
+		<Dm110>Sincronizzazione</Dm110>
+		<Dm111>Sottotitoli</Dm111>
+		<Dm112>Cambia<br>durata</Dm112>
+		<Dm113>Reset</Dm113>
+		<Dm114>Pausa<br>Continua</Dm114>
+		<Dm115>mostra tutti i sottotitoli</Dm115>
+		<Dm116>nascondi tutti i sottotitoli</Dm116>
+		<Dm218>Significato dei pulsanti</Dm218>
+		<Dm119>premi per stabilire l&apos;inizio delle selezione delle righe</Dm119>
+		<Dm120>premi per stabilire la fine della selezione delle righe</Dm120>
+		<Dm121>premi per riprodurre</Dm121>
+		<Dm122>premi per riprodurre e poi ripetere all&apos;infinito</Dm122>
+		<Dm126>Durata di una Clip</Dm126>
+		<Dm501>DOC/shared/cbc_4_HELP.html?language=it</Dm501>
+		<Dm145>reset</Dm145>
+		<Dm146>ripristina i colori iniziali di testo e sfondo</Dm146>
+		<Dm147>scegli il colore dello sfondo</Dm147>
+		<Dm148>scegli il colore del testo</Dm148>
+		<Dm149>ricerca automatica del colore di testo più adatto allo sfondo</Dm149>
+		<Dm167>la riga è visibile, premi per nasconderla</Dm167>
+		<Dm168>la riga è invisibile, premi per renderla visibile  </Dm168>
+		<Dm169>la traduzione è nascosta, premi per renderla visibile</Dm169>
+		<Dm170>la traduzione è visibile, premi per nasconderla  </Dm170>
+		<Dm171>correzione del tempo di inizio o fine della riga</Dm171>
+		<Dm201>Colori</Dm201>
+		<Dm202>Cambia i Colori</Dm202>
+		<Dm204>Sfondo</Dm204>
+		<Dm205>Testo</Dm205>
+		<Dm206>Testo</Dm206>
+		<Dm207>autom.</Dm207>
+		<Dm208><br>Il <b>Contrasto</b>tra i colori dello sfondo e del testo è</Dm208>
+		<Dm209>buono</Dm209>
+		<Dm210>insufficiente</Dm210>
+		<Dm211>cambia il colore dello sfondo o del testo<br>oppure premi il tasto <b>autom.</b>
+		<br>per cercare automaticamente il colore di testo più adatto
+		</Dm211>
+		<Dm212>sto cercando il colore migliore</Dm212>
+		<Dm213>Statistiche</Dm213>		
+		<Dm220>selez. inizio</Dm220>  
+		<Dm221>selez. fine</Dm221>   
+		<Dm222>mostra / nascondi<br>sottotitoli</Dm222> 
+		<Dm223>mostra / nascondi<br>traduzione</Dm223> 
+		<Dm224>Sottotitoli</Dm224>
+		<Dm225>Play una sola volta</Dm225> 
+		<Dm226>Play all&apos;infinito</Dm226>
+		<Dm227>N.</Dm227>
+		<Dm228>da</Dm228>
+		<Dm229>a</Dm229>
+		<Dm230>massimo numero di <br>secondi di spostamento<br></Dm230>
+		<Dm231>far scorrere il cursore a sinistra o a destra<br>per anticipare <br>o posticipare<br>l&apos;inizio della riga</Dm231>
+		<Dm232>far scorrere il cursore a sinistra o a destra<br>per anticipare <br>o posticipare <br>la fine della riga</Dm232>		
+		<Dm244><b>Per sincronizzare i sottotitoli col parlato</b>
+		</Dm244>
+		<Dm245><ul><li>Seleziona un gruppo di righe di sottotitoli (tasti <b>&#8594; &nbsp; &#8592;</b>), 
+		</li><li>assicurati che i sottotitoli siano visibili (libro aperto &#128214;)  
+		</li><li>clicca sull&apos;icona della testa parlante &#128483; per far partire la riproduzione.  	
+		</li><li>appena una qualsiasi riga di sottotitoli è stata completamente pronunciata premi il tasto <b>Stop</b>
+		</li><li>Se è difficile riuscire a fermare la riproduzione al punto esatto, diminuisci la velocità (cursore verticale a destra) e riprova.
+		</li><li>Dopo lo stop si aprirà un riquadro dove dovrai indicare questa riga. 
+		</li><li>A questo punto la correzione sarà stata effettuata e 
+			resterà attiva anche nelle sessioni successive (anche dopo aver fatto ripartire il computer).
+		</li><li>Per chiudere questa finestra premi il tasto <b>Sync.OK</b>. </li></ul>
+		</Dm245>
+		<Dm300>Parole</Dm300>
+		<Dm302>Bilingue Stampabile</Dm302>		
+		<Dm303>Testo Stampabile</Dm303>	
+		<Dm324>Testo</Dm324> 
+				<Dm400><b>Per sincronizzare i sottotitoli con il parlato</b></Dm400>
+		<Dm401><ul><li>Seleziona un gruppo di righe di sottotitoli </li></ul></Dm401>
+		<Dm402>Esercitati<br>ascoltando e leggendo<br>solo poche righe di sottotitoli alla volta</Dm402>
+		<Dm403>Esercitati<br>ascoltando<br>solo pochi secondi alla volta</Dm403>
+		<Dm404>Esercitati<br>con l'ascolto (voce sintetica) e la lettura </Dm404>
+		<Dm405>Tasso</Dm405>
+		<Dm406>ora di fine</Dm406>
+		<Dm407>secondi</Dm407>
+		<Dm408>dal <br>secondo</Dm408>
+		<Dm409>al <br>secondo</Dm409>
+		<Dm410>testo</Dm410>
+		<Dm411>Sottotitoli</Dm411>
+		<Dm412>Premere il pulsante della riga che termina con l'ultima parola pronunciata</Dm412>
+		<Dm413>linee di sottotitoli</Dm413>
+		<Dm414>riga dei sottotitoli</Dm414>
+		<Dm415>mostra tutti i sottotitoli</Dm415>
+		<Dm416>nascondi tutti i sottotitoli</Dm416>
+		<Dm417>aumentato di</Dm417>
+		<Dm418>diminuito di</Dm418>
+		<Dm419>Testo bilingue</Dm419>
+		<Dm420>parlato in</Dm420>	
+		<Dm421>testo</Dm421>	
+		<Dm422>Play la voce scelta</Dm422>                          
+        <Dm423>Play una voce a turno</Dm423>    
+		<Dm424>Play pausa tra le parole</Dm424>
+        <Dm425>N.</Dm425>	
+		<Dm426>Tono</Dm426>
+		<Dm427>Velocità</Dm427>
+		<Dm428>Pausa</Dm428>
+		<Dm429>Riprendi</Dm429>
+		<Dm430>Annulla</Dm430>
+		<Dm431>Indietro</Dm431>  
+		<Dm432>manca il testo in lingua originale</Dm432>	
+		<Dm433>manca la traduzione</Dm433>	
+		<Dm434>ma se va bene così, scrivi al suo posto 3 puntini di seguito <b>§...§</b></Dm434>  	
+		<Dm435>Seleziona la prima voce che dovrà leggere il testo</Dm435>
+		<Dm436>le altre voci nella stessa lingua leggeranno a turno</Dm436>
+		<Dm437>continua</Dm437>
+		<Dm438>testo §1§</Dm438>
+		<Dm439>specifica la lunghezza massima delle righe</Dm439>  
+		<Dm440>continua</Dm440>	
+		<Dm441>comprensione orale</Dm441>	
+		<Dm451>Seleziona una voce</Dm451>
+		<Dm452>lingua</Dm452>
+		<Dm453>voce</Dm453>
+		<Dm454>continua</Dm454>
+		<Dm455>seleziona inizio</Dm455>
+		<Dm456>seleziona fine</Dm456>
+		<Dm457>mostra / nascondi<br>testo</Dm457>
+		<Dm458>mostra / nascondi<br>traduzione</Dm458>		
+		<Dm463>parola<br>per<br>parola</Dm463>
+		<Dm464>Uno strumento per migliorare la<br>§oralcomprehension§<br> delle lingue straniere</Dm464>
+		<Dm465>ascoltando un testo <br>letto una riga per volta, una parola per volta
+			<br><br>ad ogni click la riga o la parola viene letta dalla voce indicata 
+			<br>anche a velocità ridotta se richiesto   
+		</Dm465>
+		<Dm466>Incolla qui sotto il testo in <b>§1§</b></Dm466>
+		<Dm467>Incolla la traduzione riga per riga qui sotto </Dm467>
+		<Dm468>(se non esiste scrivere 3 punti...)</Dm468>	
+		<Dm470>sottotitolo n.§r1§</Dm470>
+		<Dm471>parola n.§w1§</Dm471>
+		<Dm472>voce reale</Dm472>
+		<Dm473>voci sintetiche</Dm473> 
+		
+		<Dm711>Righe</Dm711>			
+		<Dm715>mostra tutte le righe</Dm715>m119
+		<Dm716>nascondi tutte le righe</Dm716>
+		<Dm717>lista tutte le righe</Dm717>	
+		<Dm731>vai a inizio delle righe in lingua originale</Dm731>  
+		<Dm732>vai a inizio delle righe tradotte</Dm732>	
+		<Dm782>Mostra i  <b>Sottotitoli</b>della riga in riproduzione</Dm782>
+		<Dm783>Mostra la <b>Traduzione</b>della riga in riproduzione</Dm783>
+		<Dm791>Testo in lingua originale</Dm791>
+		<Dm792>Testo tradotto</Dm792>
+		<Dm846>Salta</Dm846>		
+		<Dm893>La riga tradotta dovrebbe servire <br>solo per avere un'idea del significato.<br>
+			<b>La traduzione riga per riga è generalmente inaffidabile.</b>
+		</Dm893>
+		<Dm894>Clic sul pulsante <b>t?</b> per leggere i sottotitoli</Dm894>			
+		<Dm895>Esercitati<br>ascoltando e leggendo<br>solo poche righe di sottotitoli alla volta</Dm895>
+		<Dm896>Esercitati<br>ascoltando<br>solo pochi secondi alla volta</Dm896>
+		<Dm897>Esercitati<br><small>ascoltando (voce sintetica) e leggendo </small><br>solo poche righe di testo alla volta</Dm897>	
+		<Dm900>Aspetta un momento, per piacere <br></Dm900> 
+		<Dma06>Conferma</Dma06>
+		<Dma10>Premi per scaricare</Dma10>
+		<Dma12>titolo</Dma12>
+		<Dma17><b>Questa è l&apos;area dei sottotitoli</b>,<br>è possibile spostarla trascinando l&apos;ancora 
+		<br>(cliccare sull&apos;ancora e tenendo schiacciato spostare il mouse)
+		<br>E&apos; possibile modificare le dimensione di questa striscia<br>trascinando il quadrato blu .
+		</Dma17>
+		<Dma18>Devi spostare il file scaricato dalla cartella dei download alla cartella <b>ClipByClip/PLAYER</b></Dma18>
+		<Dma20>manca il titolo</Dma20>
+		<Dma21>il file dei sottotitoli originali non è stato ancora letto oppure è vuoto</Dma21>
+		<Dma24>errore1 nel passaggio precedente: riga in formato senza aspetti in extract_time(</Dma24>
+		<Dma25>errore2 nel passaggio precedente: riga in formato senza aspetti in extract_time(</Dma25>
+		<Dma26>errore3 in extract_time()</Dma26>
+		<Dma30>secondi senza dialogo</Dma30>
+		<Dma50>Seleziona uno o più file.</Dma50>
+		<Dma52>non può essere riprodotto</Dma52>
+		<Dma80>Mostra</Dma80>
+		<Dma81>Nascondi</Dma81>
+		<Dmb07>oppure</Dmb07>
+		<Dmb10>I file video o audio da riprodurre devono trovarsi nella cartella <b>ClipByClip/VideoAudio</b></Dmb10>
+		<Dmb12>VIDEO o File audio</Dmb12>
+		<Dmb13>Seleziona un&apos;altro file Video o Audio nella cartella <b>ClipByClip/VideoAudio</b></Dmb13>
+		<Dmb22>per migliorare la comprensione di ascolto e lettura di una lingua straniera</Dmb22>
+		<Dmb23>per migliorare la comprensione di ascolto e lettura di una lingua straniera</Dmb23>
+		<Dmb50>Errore<br>il file non è un video e neppure un audio</Dmb50>
+		<Dmb62>il file da eseguire</Dmb62>
+		<Dmb64>non è un testo</Dmb64>
+		<Dmb65>non è un file di testo</Dmb65>
+		<Dmb67>Specifica i file sottotitoli da utilizzare e quindi <br>clicca qui sotto<br>per scaricare i due file</Dmb67>
+		<Dmb68>Specifica i file sottotitoli da utilizzare e quindi <br>clicca qui sotto<br>per scaricare i due file</Dmb68>
+		<Dmb71>codificati nel file video</Dmb71>
+		<Dmb74><b>Nome e percorso della cartella devono essere gli stessi di quelli che contengono il file </b></Dmb74>
+		<Dmb77>è stato scaricato nella cartella download</Dmb77>
+		<Dmb78>Per poterlo eseguire cambia la parte finale del nome in <b>.html</b></Dmb78>
+		<Dmb79>Questo file può essere spostato ed eseguito in qualunque cartella del computer</Dmb79>
+		<Dmb81>il file</Dmb81>
+		<Dmb83>tempo di fine</Dmb83>
+		<Dmb84>secondi</Dmb84>
+		<Dmb85>dal <br>secondo</Dmb85>
+		<Dmb86>al <br>secondo</Dmb86>
+		<Dmb89>testo</Dmb89>
+		<Dmb90>Premi il pulsante della riga che termina con l&apos;ultima parola pronunciata</Dmb90>
+		<Dmb91>righe di sottotitolo</Dmb91>
+		<Dmc85>riga sottotitolo</Dmc85>
+		<Dmc86>aumentato di</Dmc86>
+		<Dmc87>diminuito di</Dmc87>			
+		<Dmc88>Testo Bilingue</Dmc88>   
+		<Dmt01>Sintesi vocale</Dmt01>
+		<Dmt02>Seleziona la voce</Dmt02>
+		<Dmt03>Volume</Dmt03>
+		<Dmt04>Velocità</Dmt04>
+		<Dmt05>Tono</Dmt05>			
 		<Dm100>Testo Bilingue ottenuto dai sottotitoli</Dm100>
 		
 		<Hfile>doc/helpxx.html</Hfile>
