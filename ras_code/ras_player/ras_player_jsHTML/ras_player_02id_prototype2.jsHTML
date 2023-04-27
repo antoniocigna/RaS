@@ -92,6 +92,7 @@ let table_prototype2= `
                                  <span style="font-size:2em;height:1.4em;">🗣</span><span style="font-size:0.9em;">𝄐</span>
                                  </button>
                               </td>
+							  <td class="timerow1">§w1+1§</td>
                            </tr>
 
                         </tbody>
@@ -117,6 +118,7 @@ let table_prototype2= `
 			word0Orig =  list_wordsOrig[p1]; 
 			word0TTS  =  list_wordsTTS[p1]; 
 			newProtoTR += protoTR.replaceAll("§nrow§",id_row).replaceAll("§w1§",p1).
+					replaceAll("§w1+1§",(1+p1)). 
 					replaceAll("§wordOrig§",word0Orig).replaceAll("§wordTTS§",word0TTS);
 		}
 		return protoFirst + newProtoTR + protoLast; 
