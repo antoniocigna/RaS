@@ -47,6 +47,8 @@ function onclick_tts_get_oneLangVoice(this1) {
 	**/
 	tts_2_fill_the_voices();
 	
+	var ix = selected_voice_ix;   
+	
 	var langRegion = get_languageName( voices[ix].lang ) ;
 	var langname = langRegion.split("-")[0]; 
 	document.getElementById("id_ext_language").innerHTML = voices[ix].lang + " " + langRegion; // in common/cbc_MESSAGE_manager.js 
@@ -58,7 +60,7 @@ function onclick_tts_get_oneLangVoice(this1) {
 	
 	myVoice = voices[ix].lang + " " + voices[ix].name;  
 	document.getElementById("id_myLang").innerHTML = myVoice;  
-	selected_voice_ix        = ix; 	
+	//selected_voice_ix        = ix; 	
 	selected_voiceLangRegion =  voices[ix].lang	
 	selected_voiceLang2      =  selected_voiceLangRegion.substr(0,2);
 	selected_voiceName       =  voices[ix].name
